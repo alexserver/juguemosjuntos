@@ -1,1 +1,23 @@
 @import "tailwindcss";
+
+@theme {
+  /* Custom brand colors */
+  --color-brand-orange: #ff6b35;
+  --color-brand-yellow: #f7b801;
+  --color-brand-purple: #8b5fbf;
+  --color-brand-turquoise: #00cfc1;
+
+  /* Extended border radius for playful design */
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+
+  /* Playful font family */
+  --font-playful: Quicksand, Nunito, "Comic Sans MS", system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-white text-gray-900 font-playful;
+  }
+}

@@ -1,0 +1,94 @@
+---
+// Header component with navigation
+import logo from "../assets/images/juguemos-juntos-logo.png";
+---
+
+<header class="sticky top-0 z-50 bg-white shadow-md">
+  <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+    <!-- Logo -->
+    <div class="flex items-center">
+      <a href="/" class="flex items-center hover:opacity-80 transition-opacity">
+        <img src={logo.src} alt="Juguemos Juntos" class="h-12 md:h-16" />
+      </a>
+    </div>
+
+    <!-- Desktop Navigation -->
+    <div class="hidden md:flex items-center space-x-8">
+      <a href="#inicio" class="text-gray-700 hover:text-brand-purple transition-colors font-semibold">
+        Inicio
+      </a>
+      <a href="#sobre-nosotros" class="text-gray-700 hover:text-brand-purple transition-colors font-semibold">
+        Sobre Nosotros
+      </a>
+      <a href="#juegos" class="text-gray-700 hover:text-brand-purple transition-colors font-semibold">
+        Juegos
+      </a>
+      <a href="#contacto" class="text-gray-700 hover:text-brand-purple transition-colors font-semibold">
+        Contacto
+      </a>
+    </div>
+
+    <!-- CTA Button -->
+    <div class="hidden md:block">
+      <a
+        href="#halloween"
+        class="px-6 py-3 bg-brand-orange text-white font-bold rounded-3xl hover:brightness-110 transition-all shadow-lg"
+      >
+        Conoce nuestra Lotería de Halloween 🎃
+      </a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button
+      id="mobile-menu-button"
+      class="md:hidden p-2 text-gray-700 hover:text-brand-purple transition-colors"
+      aria-label="Toggle menu"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+    <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+      <a href="#inicio" class="text-gray-700 hover:text-brand-purple transition-colors font-semibold">
+        Inicio
+      </a>
+      <a href="#sobre-nosotros" class="text-gray-700 hover:text-brand-purple transition-colors font-semibold">
+        Sobre Nosotros
+      </a>
+      <a href="#juegos" class="text-gray-700 hover:text-brand-purple transition-colors font-semibold">
+        Juegos
+      </a>
+      <a href="#contacto" class="text-gray-700 hover:text-brand-purple transition-colors font-semibold">
+        Contacto
+      </a>
+      <a
+        href="#halloween"
+        class="px-6 py-3 bg-brand-orange text-white font-bold rounded-3xl hover:brightness-110 transition-all text-center"
+      >
+        Conoce nuestra Lotería de Halloween 🎃
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Mobile menu toggle
+  const menuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuButton?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+
+  // Close mobile menu when clicking a link
+  const mobileLinks = mobileMenu?.querySelectorAll('a');
+  mobileLinks?.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+    });
+  });
+</script>
