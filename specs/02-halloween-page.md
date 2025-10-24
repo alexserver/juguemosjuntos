@@ -11,6 +11,7 @@ Do not include header or footer — those are shared across all pages.
 ### Route & File Structure
 
 **Page Location:** `src/pages/halloween.astro`
+
 - Route will be accessible at `/halloween`
 - Uses existing `Layout.astro` component
 - Header and Footer are already included in the layout
@@ -30,13 +31,14 @@ Add Halloween-specific colors to `src/styles/global.css` within the existing `@t
   --color-brand-turquoise: #00cfc1;
 
   /* Halloween theme colors (add these) */
-  --color-halloween-green: #4ade80;     /* Bright green for Halloween */
-  --color-halloween-black: #1a1a1a;     /* Dark black for contrast */
-  --color-halloween-dark: #2d1b4e;      /* Deep purple-black */
+  --color-halloween-green: #4ade80; /* Bright green for Halloween */
+  --color-halloween-black: #1a1a1a; /* Dark black for contrast */
+  --color-halloween-dark: #2d1b4e; /* Deep purple-black */
 }
 ```
 
 **Why extend global theme:**
+
 - ✅ Tailwind v4 theme variables are global by design
 - ✅ Can reuse Halloween colors across other pages/components if needed
 - ✅ Simpler to maintain than scoped themes
@@ -44,6 +46,7 @@ Add Halloween-specific colors to `src/styles/global.css` within the existing `@t
 - ✅ No conflicts with current color system
 
 **Color Usage:**
+
 - Orange: Use existing `brand-orange`
 - Black: Use new `halloween-black`
 - Purple: Use existing `brand-purple`
@@ -52,6 +55,7 @@ Add Halloween-specific colors to `src/styles/global.css` within the existing `@t
 ### Component Structure
 
 **Reusable Components** (create in `src/components/`):
+
 1. **FeatureList.astro** - List item with icon for "Qué incluye" section
 2. **HighlightCard.astro** - Similar to ValueCard but styled for Halloween theme (can reuse existing ValueCard)
 3. **TestimonialCard.astro** - Card for customer testimonials with quote styling
@@ -62,15 +66,18 @@ Add Halloween-specific colors to `src/styles/global.css` within the existing `@t
 ### Implementation Order
 
 1. **Setup** (first)
+
    - Add Halloween color palette to `src/styles/global.css`
    - Ensure colors generate proper utilities
 
 2. **New Components**
+
    - `src/components/FeatureList.astro` - For "Qué incluye" items
    - `src/components/TestimonialCard.astro` - For testimonial quotes
    - `src/components/StepCard.astro` - For numbered game instructions
 
 3. **Page Creation** (`src/pages/halloween.astro`)
+
    - Hero section with product image
    - "Qué incluye" section (using FeatureList components)
    - "Por qué te encantará" section (using existing ValueCard or new HighlightCard)
@@ -80,17 +87,20 @@ Add Halloween-specific colors to `src/styles/global.css` within the existing `@t
    - Final CTA section
 
 4. **Styling**
+
    - Use Halloween color palette throughout
    - Add Halloween-themed backgrounds (e.g., subtle patterns, pumpkins)
    - Maintain playful, child-friendly aesthetic
    - Ensure print-friendly (no complex gradients)
 
 5. **Images & Assets**
+
    - Add product images to `src/assets/images/halloween/`
    - Add character card images for gallery (9 cards)
    - Consider placeholder images if final assets aren't ready
 
 6. **Responsive Design**
+
    - Mobile-first approach
    - Gallery grid: 1 column mobile, 2 columns tablet, 3 columns desktop
    - Test CTA button visibility on all screen sizes
@@ -125,10 +135,10 @@ The page structure and content (in Spanish) should be as follows:
 
 - Title: “¿Por qué te encantará?”
 - Four highlights with emojis:
-  - 💀 Diversión en familia
-  - 🧙 Diseños tiernos y no aterradores (para todas las edades)
-  - 🎨 Arte exclusivo y colorido
-  - 🧠 Estimula memoria y vocabulario en niños
+  - Diversión en familia
+  - Diseños tiernos y no aterradores (para todas las edades)
+  - Arte exclusivo y colorido
+  - Estimula memoria y vocabulario en niños
 
 4. SECCIÓN: GALERÍA DE CARTAS
 

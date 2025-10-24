@@ -12,6 +12,14 @@
   --color-halloween-black: #1a1a1a;
   --color-halloween-dark: #2d1b4e;
 
+  /* Night theme colors for dark Halloween page */
+  --color-night-dark: #0a0118;
+  --color-night-purple: #1a0b2e;
+  --color-night-blue: #16213e;
+  --color-moon-cream: #fef5e7;
+  --color-moon-glow: #fff8dc;
+  --color-halloween-orange-bright: #ff8c42;
+
   /* Extended border radius for playful design */
   --radius-xl: 1rem;
   --radius-2xl: 1.5rem;
