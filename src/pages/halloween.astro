@@ -1,0 +1,204 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Button from "../components/Button.astro";
+import ValueCard from "../components/ValueCard.astro";
+import FeatureList from "../components/FeatureList.astro";
+import TestimonialCard from "../components/TestimonialCard.astro";
+import StepCard from "../components/StepCard.astro";
+import loteriaLogo from "../assets/images/loteria-halloween-logo.png";
+---
+
+<Layout title="Lotería de Halloween - Juguemos Juntos">
+  <Header />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-linear-to-br from-brand-orange/20 via-brand-purple/20 to-halloween-green/20 py-20 md:py-32">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <!-- Product Image -->
+            <div class="flex justify-center">
+              <img
+                src={loteriaLogo.src}
+                alt="Lotería de Halloween"
+                class="w-full max-w-md"
+              />
+            </div>
+
+            <!-- Hero Content -->
+            <div class="text-center md:text-left">
+              <h1 class="text-4xl md:text-6xl font-bold text-halloween-dark mb-6">
+                ¡Lotería de Halloween! 👻
+              </h1>
+              <p class="text-xl md:text-2xl text-gray-700 mb-8">
+                Una versión mágica y divertida del clásico juego mexicano. Perfecta para niños y fiestas familiares.
+              </p>
+              <Button variant="primary" href="#comprar">
+                Cómprala ahora
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Qué Incluye Section -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto">
+          <h2 class="text-3xl md:text-5xl font-bold text-halloween-dark mb-12 text-center">
+            ¿Qué incluye la Lotería de Halloween?
+          </h2>
+          <div class="space-y-6">
+            <FeatureList
+              icon="🎭"
+              text="24 personajes únicos (brujita, vampiro, momia, fantasma, etc.)"
+            />
+            <FeatureList
+              icon="📋"
+              text="12 tablas de juego"
+            />
+            <FeatureList
+              icon="📖"
+              text="Instrucciones fáciles"
+            />
+            <FeatureList
+              icon="🌱"
+              text="Versión imprimible y ecológica"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Por Qué Te Encantará Section -->
+    <section class="py-20 bg-linear-to-br from-halloween-green/10 to-brand-purple/10">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-5xl font-bold text-halloween-dark mb-12 text-center">
+          ¿Por qué te encantará?
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <ValueCard
+            icon="💀"
+            title="Diversión en familia"
+            description="Perfecto para compartir momentos especiales juntos."
+          />
+          <ValueCard
+            icon="🧙"
+            title="Diseños tiernos"
+            description="No aterradores, diseñados para todas las edades."
+          />
+          <ValueCard
+            icon="🎨"
+            title="Arte exclusivo"
+            description="Ilustraciones coloridas y originales."
+          />
+          <ValueCard
+            icon="🧠"
+            title="Educativo"
+            description="Estimula memoria y vocabulario en niños."
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Galería de Cartas Section -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-5xl font-bold text-halloween-dark mb-6 text-center">
+          Conoce a los personajes
+        </h2>
+        <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+          Cada personaje fue diseñado con amor y color para que los niños aprendan mientras juegan.
+        </p>
+
+        <!-- Placeholder for character cards - will be replaced with actual images -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => (
+            <div class="aspect-square bg-linear-to-br from-brand-orange/20 to-brand-purple/20 rounded-2xl flex items-center justify-center shadow-lg">
+              <span class="text-6xl">🎃</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Cómo Jugar Section -->
+    <section class="py-20 bg-halloween-dark text-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-5xl font-bold mb-12 text-center">
+          Cómo jugar
+        </h2>
+        <div class="max-w-3xl mx-auto space-y-8">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-12 h-12 bg-brand-orange text-white rounded-full flex items-center justify-center text-xl font-bold">
+              1
+            </div>
+            <p class="text-lg pt-2">Descarga e imprime las cartas.</p>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-12 h-12 bg-brand-orange text-white rounded-full flex items-center justify-center text-xl font-bold">
+              2
+            </div>
+            <p class="text-lg pt-2">Reparte las tablas entre los jugadores.</p>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-12 h-12 bg-brand-orange text-white rounded-full flex items-center justify-center text-xl font-bold">
+              3
+            </div>
+            <p class="text-lg pt-2">Canta las cartas al estilo tradicional: "¡Laaaa Brujitaaa!"</p>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 w-12 h-12 bg-brand-orange text-white rounded-full flex items-center justify-center text-xl font-bold">
+              4
+            </div>
+            <p class="text-lg pt-2">¡Gana quien complete su tabla!</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonios Section -->
+    <section class="py-20 bg-linear-to-br from-brand-purple/10 to-halloween-green/10">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl md:text-5xl font-bold text-halloween-dark mb-12 text-center">
+          Lo que dicen las familias
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <TestimonialCard
+            quote="A mis hijos les encantó, se rieron muchísimo con los personajes."
+            author="María"
+          />
+          <TestimonialCard
+            quote="Una versión adorable del clásico, ideal para Halloween."
+            author="Carlos"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Final Section -->
+    <section id="comprar" class="py-20 bg-linear-to-br from-brand-orange/30 via-brand-purple/30 to-halloween-green/30">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <div class="bg-white rounded-3xl p-12 shadow-2xl">
+            <h2 class="text-3xl md:text-5xl font-bold text-halloween-dark mb-6">
+              🎃 ¡Consíguela ahora y vive la magia de Halloween en familia!
+            </h2>
+            <p class="text-xl text-gray-700 mb-8">
+              Descarga instantánea. Imprime y juega en minutos.
+            </p>
+            <Button variant="primary" class="text-xl px-8 py-4">
+              Comprar ahora
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,14 @@
+---
+// Feature list item with icon for "Qué incluye" section
+interface Props {
+  icon: string;
+  text: string;
+}
+
+const { icon, text } = Astro.props;
+---
+
+<div class="flex items-start gap-4">
+  <div class="text-3xl flex-shrink-0">{icon}</div>
+  <p class="text-lg text-gray-700 pt-1">{text}</p>
+</div>

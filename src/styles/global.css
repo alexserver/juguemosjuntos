@@ -7,6 +7,11 @@
   --color-brand-purple: #8b5fbf;
   --color-brand-turquoise: #00cfc1;
 
+  /* Halloween theme colors */
+  --color-halloween-green: #4ade80;
+  --color-halloween-black: #1a1a1a;
+  --color-halloween-dark: #2d1b4e;
+
   /* Extended border radius for playful design */
   --radius-xl: 1rem;
   --radius-2xl: 1.5rem;
