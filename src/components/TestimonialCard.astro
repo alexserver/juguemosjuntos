@@ -3,13 +3,14 @@
 interface Props {
   quote: string;
   author: string;
+  quoteClass?: string;
 }
 
-const { quote, author } = Astro.props;
+const { quote, author, quoteClass = '' } = Astro.props;
 ---
 
 <div class="bg-white rounded-2xl p-6 shadow-lg">
   <div class="text-4xl text-brand-orange mb-4">"</div>
-  <p class="text-gray-700 text-lg italic mb-4">{quote}</p>
+  <p class:list={["text-gray-700 text-lg italic mb-4", quoteClass]}>{quote}</p>
   <p class="text-brand-purple font-bold">— {author}</p>
 </div>

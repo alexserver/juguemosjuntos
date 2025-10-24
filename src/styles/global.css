@@ -19,6 +19,12 @@
 
   /* Playful font family */
   --font-playful: Quicksand, Nunito, "Comic Sans MS", system-ui, sans-serif;
+
+  /* Mystery Quest font for Halloween theme */
+  --font-mystery: "Mystery Quest", system-ui;
+
+  /* Schoolbell font for Halloween theme */
+  --font-schoolbell: "Schoolbell", cursive;
 }
 
 @layer base {
