@@ -19,7 +19,16 @@ import char07 from "../assets/images/characters/07.png";
 import char08 from "../assets/images/characters/08.png";
 import char09 from "../assets/images/characters/09.png";
 
-const characters = [
+// Value card images
+import arteImg from "../assets/images/misc/arte.png";
+import disenioImg from "../assets/images/misc/disenio.png";
+import diversionImg from "../assets/images/misc/diversion.png";
+import memoriaImg from "../assets/images/misc/memoria.png";
+
+// Character data
+import charactersData from "../data/characters.json";
+
+const characterImages = [
   char01,
   char02,
   char03,
@@ -30,6 +39,11 @@ const characters = [
   char08,
   char09,
 ];
+
+const characters = charactersData.map((charData, index) => ({
+  ...charData,
+  image: characterImages[index],
+}));
 ---
 
 <Layout title="Lotería de Halloween - Juguemos Juntos">
@@ -103,7 +117,7 @@ const characters = [
     </section>
 
     <!-- Por Qué Te Encantará Section -->
-    <section class="py-20 bg-linear-to-br from-night-purple/60 to-night-dark">
+    <section class="py-20 bg-indigo-950">
       <div class="container mx-auto px-4">
         <h2
           class="text-3xl md:text-5xl font-bold text-halloween-orange-bright mb-12 text-center"
@@ -114,25 +128,25 @@ const characters = [
           class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto"
         >
           <ValueCard
-            icon="🎉"
+            image={diversionImg}
             title="Diversión en familia"
             description="Perfecto para compartir momentos especiales juntos."
             variant="dark"
           />
           <ValueCard
-            icon="🧙"
+            image={disenioImg}
             title="Diseños tiernos"
             description="No aterradores, diseñados para todas las edades."
             variant="dark"
           />
           <ValueCard
-            icon="🎨"
+            image={arteImg}
             title="Arte exclusivo"
             description="Ilustraciones coloridas y originales."
             variant="dark"
           />
           <ValueCard
-            icon="🧠"
+            image={memoriaImg}
             title="Educativo"
             description="Estimula memoria y vocabulario en niños."
             variant="dark"
@@ -159,13 +173,18 @@ const characters = [
           class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto"
         >
           {
-            characters.map((character, index) => (
-              <div class="aspect-square rounded-2xl overflow-hidden shadow-lg shadow-halloween-orange-bright/20 hover:shadow-2xl hover:shadow-halloween-orange-bright/40 transition-all duration-300 hover:scale-105 border-2 border-halloween-orange-bright/20">
-                <img
-                  src={character.src}
-                  alt={`Personaje ${index + 1}`}
-                  class="w-full h-full object-cover"
-                />
+            characters.map((character) => (
+              <div class="aspect-square rounded-2xl overflow-hidden shadow-lg shadow-halloween-orange-bright/20 hover:shadow-2xl hover:shadow-halloween-orange-bright/40 transition-all duration-300 hover:scale-105 border-2 border-halloween-orange-bright/20 flex flex-col">
+                <div class="flex-1 overflow-hidden">
+                  <img
+                    src={character.image.src}
+                    alt={character.name}
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div class="bg-moon-cream text-gray-800 py-3 px-4 text-center font-semibold">
+                  {character.name}
+                </div>
               </div>
             ))
           }

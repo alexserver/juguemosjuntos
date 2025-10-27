@@ -1,0 +1,11 @@
+[
+  { "id": 1, "name": "La Brujita", "filename": "01.png" },
+  { "id": 2, "name": "El Fantasma", "filename": "02.png" },
+  { "id": 3, "name": "El Vampiro", "filename": "03.png" },
+  { "id": 4, "name": "La Momia", "filename": "04.png" },
+  { "id": 5, "name": "El Lobo", "filename": "05.png" },
+  { "id": 6, "name": "El Esqueleto", "filename": "06.png" },
+  { "id": 7, "name": "La Calabaza", "filename": "07.png" },
+  { "id": 8, "name": "El Murciélago", "filename": "08.png" },
+  { "id": 9, "name": "El Zombie", "filename": "09.png" }
+]

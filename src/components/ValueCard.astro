@@ -1,31 +1,57 @@
 ---
 // Reusable ValueCard component for mission/values section
+import type { ImageMetadata } from "astro";
+
 interface Props {
-  icon: string;
+  icon?: string;
+  image?: ImageMetadata;
   title: string;
   description: string;
   titleClass?: string;
   descriptionClass?: string;
-  variant?: 'light' | 'dark';
+  variant?: "light" | "dark";
 }
 
-const { icon, title, description, titleClass = '', descriptionClass = '', variant = 'light' } = Astro.props;
+const {
+  icon,
+  image,
+  title,
+  description,
+  titleClass = "",
+  descriptionClass = "",
+  variant = "light",
+} = Astro.props;
 
-const cardClasses = variant === 'dark'
-  ? 'bg-night-purple/80 border border-halloween-orange-bright/30'
-  : 'bg-white';
+const cardClasses = variant === "dark" ? "bg-violet-800" : "bg-white";
 
-const defaultTitleColor = variant === 'dark'
-  ? 'text-moon-glow'
-  : 'text-brand-purple';
+const defaultTitleColor =
+  variant === "dark" ? "text-moon-glow" : "text-brand-purple";
 
-const defaultDescriptionColor = variant === 'dark'
-  ? 'text-moon-cream'
-  : 'text-gray-600';
+const defaultDescriptionColor =
+  variant === "dark" ? "text-moon-cream" : "text-gray-600";
 ---
 
-<div class:list={[cardClasses, "rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"]}>
-  <div class="text-5xl mb-4">{icon}</div>
-  <h3 class:list={["text-xl font-bold mb-2", defaultTitleColor, titleClass]}>{title}</h3>
+<div
+  class:list={[
+    cardClasses,
+    "rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1",
+  ]}
+>
+  {
+    image ? (
+      <div class="mb-4">
+        <img
+          src={image.src}
+          alt={title}
+          class="w-56 h-56 object-contain rounded-xl"
+        />
+      </div>
+    ) : (
+      <div class="text-5xl mb-4">{icon}</div>
+    )
+  }
+  <h3 class:list={["text-xl font-bold mb-2", defaultTitleColor, titleClass]}>
+    {title}
+  </h3>
   <p class:list={[defaultDescriptionColor, descriptionClass]}>{description}</p>
 </div>
