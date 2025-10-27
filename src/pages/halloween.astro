@@ -44,6 +44,11 @@ const characters = charactersData.map((charData, index) => ({
   ...charData,
   image: characterImages[index],
 }));
+
+// WhatsApp configuration
+const whatsappNumber = import.meta.env.PUBLIC_WHATSAPP_NUMBER;
+const whatsappMessage = import.meta.env.PUBLIC_WHATSAPP_MESSAGE_HALLOWEEN;
+const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 ---
 
 <Layout title="Lotería de Halloween - Juguemos Juntos">
@@ -77,7 +82,7 @@ const characters = charactersData.map((charData, index) => ({
                 Una versión mágica y divertida del clásico juego mexicano.
                 Perfecta para niños y fiestas familiares.
               </p>
-              <Button variant="primary" href="#comprar">
+              <Button variant="primary" href={whatsappLink} target="_blank">
                 Cómprala ahora
               </Button>
             </div>
@@ -288,7 +293,12 @@ const characters = charactersData.map((charData, index) => ({
               <p class="text-xl text-moon-cream mb-8">
                 Por ahora solo vendemos versiones impresas. ¡Haz tu pedido hoy!
               </p>
-              <Button variant="primary" class="text-xl px-8 py-4">
+              <Button
+                variant="primary"
+                class="text-xl px-8 py-4"
+                href={whatsappLink}
+                target="_blank"
+              >
                 Comprar ahora
               </Button>
             </div>

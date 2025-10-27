@@ -3,10 +3,11 @@
 interface Props {
   variant?: 'primary' | 'secondary' | 'outline';
   href?: string;
+  target?: string;
   class?: string;
 }
 
-const { variant = 'primary', href, class: className = '' } = Astro.props;
+const { variant = 'primary', href, target, class: className = '' } = Astro.props;
 
 const baseClasses = 'inline-block px-6 py-3 rounded-3xl font-bold transition-all duration-300 text-center';
 
@@ -21,6 +22,6 @@ const classes = `${baseClasses} ${variantClasses[variant]} ${className}`;
 const Tag = href ? 'a' : 'button';
 ---
 
-<Tag href={href} class={classes}>
+<Tag href={href} target={target} class={classes}>
   <slot />
 </Tag>
