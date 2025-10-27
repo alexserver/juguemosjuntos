@@ -1,12 +1,12 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import Button from "../components/Button.astro";
-import ValueCard from "../components/ValueCard.astro";
-import FeatureList from "../components/FeatureList.astro";
-import TestimonialCard from "../components/TestimonialCard.astro";
 import loteriaLogo from "../assets/images/logos/loteria-halloween-logo.png";
+import Button from "../components/Button.astro";
+import FeatureList from "../components/FeatureList.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import TestimonialCard from "../components/TestimonialCard.astro";
+import ValueCard from "../components/ValueCard.astro";
+import Layout from "../layouts/Layout.astro";
 
 // Character images
 import char01 from "../assets/images/characters/01.png";
@@ -19,7 +19,17 @@ import char07 from "../assets/images/characters/07.png";
 import char08 from "../assets/images/characters/08.png";
 import char09 from "../assets/images/characters/09.png";
 
-const characters = [char01, char02, char03, char04, char05, char06, char07, char08, char09];
+const characters = [
+  char01,
+  char02,
+  char03,
+  char04,
+  char05,
+  char06,
+  char07,
+  char08,
+  char09,
+];
 ---
 
 <Layout title="Lotería de Halloween - Juguemos Juntos">
@@ -27,7 +37,9 @@ const characters = [char01, char02, char03, char04, char05, char06, char07, char
 
   <main>
     <!-- Hero Section -->
-    <section class="bg-linear-to-br from-night-dark via-night-purple to-night-blue py-20 md:py-32">
+    <section
+      class="bg-linear-to-br from-night-dark via-night-purple to-night-blue py-20 md:py-32"
+    >
       <div class="container mx-auto px-4">
         <div class="max-w-5xl mx-auto">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -42,13 +54,16 @@ const characters = [char01, char02, char03, char04, char05, char06, char07, char
 
             <!-- Hero Content -->
             <div class="text-center md:text-left">
-              <h1 class="text-4xl md:text-6xl font-bold font-mystery text-halloween-orange-bright mb-6">
+              <h1
+                class="text-4xl md:text-6xl font-bold text-halloween-orange-bright mb-6"
+              >
                 ¡Lotería de Halloween! 👻
               </h1>
-              <p class="text-xl md:text-2xl text-moon-cream mb-8 font-schoolbell">
-                Una versión mágica y divertida del clásico juego mexicano. Perfecta para niños y fiestas familiares.
+              <p class="text-xl md:text-2xl text-moon-cream mb-8">
+                Una versión mágica y divertida del clásico juego mexicano.
+                Perfecta para niños y fiestas familiares.
               </p>
-              <Button variant="primary" href="#comprar" class="font-mystery">
+              <Button variant="primary" href="#comprar">
                 Cómprala ahora
               </Button>
             </div>
@@ -61,29 +76,26 @@ const characters = [char01, char02, char03, char04, char05, char06, char07, char
     <section class="py-20 bg-night-dark">
       <div class="container mx-auto px-4">
         <div class="max-w-3xl mx-auto">
-          <h2 class="text-3xl md:text-5xl font-bold font-mystery text-moon-glow mb-12 text-center">
+          <h2
+            class="text-3xl md:text-5xl font-bold text-moon-glow mb-12 text-center"
+          >
             ¿Qué incluye la Lotería de Halloween?
           </h2>
           <div class="space-y-6">
             <FeatureList
               icon="🎭"
               text="24 personajes únicos (brujita, vampiro, momia, fantasma, etc.)"
-              textClass="font-schoolbell text-moon-cream"
+              textClass="text-moon-cream"
             />
             <FeatureList
               icon="📋"
-              text="12 tablas de juego"
-              textClass="font-schoolbell text-moon-cream"
-            />
-            <FeatureList
-              icon="📖"
-              text="Instrucciones fáciles"
-              textClass="font-schoolbell text-moon-cream"
+              text="12 cartillas de juego"
+              textClass="text-moon-cream"
             />
             <FeatureList
               icon="🌱"
-              text="Versión imprimible y ecológica"
-              textClass="font-schoolbell text-moon-cream"
+              text="Versión impresa y ecológica"
+              textClass="text-moon-cream"
             />
           </div>
         </div>
@@ -93,40 +105,36 @@ const characters = [char01, char02, char03, char04, char05, char06, char07, char
     <!-- Por Qué Te Encantará Section -->
     <section class="py-20 bg-linear-to-br from-night-purple/60 to-night-dark">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl md:text-5xl font-bold font-mystery text-halloween-orange-bright mb-12 text-center">
+        <h2
+          class="text-3xl md:text-5xl font-bold text-halloween-orange-bright mb-12 text-center"
+        >
           ¿Por qué te encantará?
         </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto"
+        >
           <ValueCard
             icon="🎉"
             title="Diversión en familia"
             description="Perfecto para compartir momentos especiales juntos."
-            titleClass="font-mystery"
-            descriptionClass="font-schoolbell"
             variant="dark"
           />
           <ValueCard
             icon="🧙"
             title="Diseños tiernos"
             description="No aterradores, diseñados para todas las edades."
-            titleClass="font-mystery"
-            descriptionClass="font-schoolbell"
             variant="dark"
           />
           <ValueCard
             icon="🎨"
             title="Arte exclusivo"
             description="Ilustraciones coloridas y originales."
-            titleClass="font-mystery"
-            descriptionClass="font-schoolbell"
             variant="dark"
           />
           <ValueCard
             icon="🧠"
             title="Educativo"
             description="Estimula memoria y vocabulario en niños."
-            titleClass="font-mystery"
-            descriptionClass="font-schoolbell"
             variant="dark"
           />
         </div>
@@ -136,105 +144,140 @@ const characters = [char01, char02, char03, char04, char05, char06, char07, char
     <!-- Galería de Cartas Section -->
     <section class="py-20 bg-linear-to-b from-night-blue/80 to-night-dark">
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl md:text-5xl font-bold font-mystery text-moon-glow mb-6 text-center">
+        <h2
+          class="text-3xl md:text-5xl font-bold text-moon-glow mb-6 text-center"
+        >
           Conoce a los personajes
         </h2>
-        <p class="text-center text-moon-cream mb-12 max-w-2xl mx-auto font-schoolbell">
-          Cada personaje fue diseñado con amor y color para que los niños aprendan mientras juegan.
+        <p class="text-center text-moon-cream mb-12 max-w-2xl mx-auto">
+          Cada personaje fue diseñado con amor y color para que los niños
+          aprendan mientras juegan.
         </p>
 
         <!-- Character cards -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          {characters.map((character, index) => (
-            <div class="aspect-square rounded-2xl overflow-hidden shadow-lg shadow-halloween-orange-bright/20 hover:shadow-2xl hover:shadow-halloween-orange-bright/40 transition-all duration-300 hover:scale-105 border-2 border-halloween-orange-bright/20">
-              <img
-                src={character.src}
-                alt={`Personaje ${index + 1}`}
-                class="w-full h-full object-cover"
-              />
-            </div>
-          ))}
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto"
+        >
+          {
+            characters.map((character, index) => (
+              <div class="aspect-square rounded-2xl overflow-hidden shadow-lg shadow-halloween-orange-bright/20 hover:shadow-2xl hover:shadow-halloween-orange-bright/40 transition-all duration-300 hover:scale-105 border-2 border-halloween-orange-bright/20">
+                <img
+                  src={character.src}
+                  alt={`Personaje ${index + 1}`}
+                  class="w-full h-full object-cover"
+                />
+              </div>
+            ))
+          }
         </div>
       </div>
     </section>
 
     <!-- Cómo Jugar Section -->
-    <section class="py-20 bg-linear-to-br from-night-dark via-night-purple to-night-blue text-white">
+    <section
+      class="py-20 bg-linear-to-br from-night-dark via-night-purple to-night-blue text-white"
+    >
       <div class="container mx-auto px-4">
-        <h2 class="text-3xl md:text-5xl font-bold font-mystery mb-12 text-center text-halloween-orange-bright">
+        <h2
+          class="text-3xl md:text-5xl font-bold mb-12 text-center text-halloween-orange-bright"
+        >
           Cómo jugar
         </h2>
         <div class="max-w-3xl mx-auto space-y-8">
           <div class="flex items-start gap-4">
-            <div class="flex-shrink-0 w-12 h-12 bg-brand-orange text-white rounded-full flex items-center justify-center text-xl font-bold">
+            <div
+              class="flex-shrink-0 w-12 h-12 bg-brand-orange text-white rounded-full flex items-center justify-center text-xl font-bold"
+            >
               1
             </div>
-            <p class="text-lg pt-2 font-schoolbell">Descarga e imprime las cartas.</p>
+            <p class="text-lg pt-2">Reparte las tablas entre los jugadores.</p>
           </div>
           <div class="flex items-start gap-4">
-            <div class="flex-shrink-0 w-12 h-12 bg-brand-orange text-white rounded-full flex items-center justify-center text-xl font-bold">
+            <div
+              class="flex-shrink-0 w-12 h-12 bg-brand-orange text-white rounded-full flex items-center justify-center text-xl font-bold"
+            >
               2
             </div>
-            <p class="text-lg pt-2 font-schoolbell">Reparte las tablas entre los jugadores.</p>
+            <p class="text-lg pt-2">
+              Un jugador canta las cartas al estilo tradicional: "¡Laaaa
+              Brujitaaa!"
+            </p>
           </div>
           <div class="flex items-start gap-4">
-            <div class="flex-shrink-0 w-12 h-12 bg-brand-orange text-white rounded-full flex items-center justify-center text-xl font-bold">
+            <div
+              class="flex-shrink-0 w-12 h-12 bg-brand-orange text-white rounded-full flex items-center justify-center text-xl font-bold"
+            >
               3
             </div>
-            <p class="text-lg pt-2 font-schoolbell">Canta las cartas al estilo tradicional: "¡Laaaa Brujitaaa!"</p>
+            <p class="text-lg pt-2">
+              Pon un frijolito o piedrita en tu cartilla si tienes el personaje
+              que anuncian
+            </p>
           </div>
           <div class="flex items-start gap-4">
-            <div class="flex-shrink-0 w-12 h-12 bg-brand-orange text-white rounded-full flex items-center justify-center text-xl font-bold">
+            <div
+              class="flex-shrink-0 w-12 h-12 bg-brand-orange text-white rounded-full flex items-center justify-center text-xl font-bold"
+            >
               4
             </div>
-            <p class="text-lg pt-2 font-schoolbell">¡Gana quien complete su tabla!</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonios Section -->
-    <section class="py-20 bg-linear-to-br from-night-purple/70 to-night-dark">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl md:text-5xl font-bold font-mystery text-moon-glow mb-12 text-center">
-          Lo que dicen las familias
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <TestimonialCard
-            quote="A mis hijos les encantó, se rieron muchísimo con los personajes."
-            author="María"
-            quoteClass="font-schoolbell"
-            variant="dark"
-          />
-          <TestimonialCard
-            quote="Una versión adorable del clásico, ideal para Halloween."
-            author="Carlos"
-            quoteClass="font-schoolbell"
-            variant="dark"
-          />
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Final Section -->
-    <section id="comprar" class="py-20 bg-linear-to-br from-night-dark via-night-purple to-brand-orange/20">
-      <div class="container mx-auto px-4">
-        <div class="max-w-3xl mx-auto text-center">
-          <div class="bg-night-purple/80 rounded-3xl p-12 shadow-2xl border-2 border-halloween-orange-bright/50">
-            <h2 class="text-3xl md:text-5xl font-bold font-mystery text-halloween-orange-bright mb-6">
-              🎃 ¡Consíguela ahora y vive la magia de Halloween en familia!
-            </h2>
-            <p class="text-xl text-moon-cream mb-8 font-schoolbell">
-              Descarga instantánea. Imprime y juega en minutos.
+            <p class="text-lg pt-2">
+              ¡Gana quien complete una línea en horizontal o vertical, o quien
+              llene su cartilla!
             </p>
-            <Button variant="primary" class="text-xl px-8 py-4 font-mystery">
-              Comprar ahora
-            </Button>
           </div>
         </div>
       </div>
-    </section>
-  </main>
 
-  <Footer />
+      <!-- Testimonios Section -->
+      <section class="py-20 bg-linear-to-br from-night-purple/70 to-night-dark">
+        <div class="container mx-auto px-4">
+          <h2
+            class="text-3xl md:text-5xl font-bold text-moon-glow mb-12 text-center"
+          >
+            Lo que dicen las familias
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <TestimonialCard
+              quote="A mis hijos les encantó, se rieron muchísimo con los personajes."
+              author="María"
+              variant="dark"
+            />
+            <TestimonialCard
+              quote="Una versión adorable del clásico, ideal para Halloween."
+              author="Carlos"
+              variant="dark"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Final Section -->
+      <section
+        id="comprar"
+        class="py-20 bg-linear-to-br from-night-dark via-night-purple to-brand-orange/20"
+      >
+        <div class="container mx-auto px-4">
+          <div class="max-w-3xl mx-auto text-center">
+            <div
+              class="bg-night-purple/80 rounded-3xl p-12 shadow-2xl border-2 border-halloween-orange-bright/50"
+            >
+              <h2
+                class="text-3xl md:text-5xl font-bold text-halloween-orange-bright mb-6"
+              >
+                🎃 ¡Consíguela ahora y vive la magia de Halloween en familia!
+              </h2>
+              <p class="text-xl text-moon-cream mb-8">
+                Por ahora solo vendemos versiones impresas. ¡Haz tu pedido hoy!
+              </p>
+              <Button variant="primary" class="text-xl px-8 py-4">
+                Comprar ahora
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <Footer />
+  </main>
 </Layout>

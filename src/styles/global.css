@@ -31,12 +31,12 @@
   /* Mystery Quest font for Halloween theme */
   --font-mystery: "Mystery Quest", system-ui;
 
-  /* Schoolbell font for Halloween theme */
-  --font-schoolbell: "Schoolbell", cursive;
+  /* Sour Gummy font for Halloween theme */
+  --font-sour-gummy: "Sour Gummy", sans-serif;
 }
 
 @layer base {
   body {
-    @apply bg-white text-gray-900 font-playful;
+    @apply bg-white text-gray-900 font-sour-gummy;
   }
 }
