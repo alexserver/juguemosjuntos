@@ -6,10 +6,10 @@ interface Props {
   textClass?: string;
 }
 
-const { icon, text, textClass = '' } = Astro.props;
+const { icon, text, textClass = 'text-gray-700' } = Astro.props;
 ---
 
 <div class="flex items-start gap-4">
-  <div class="text-3xl flex-shrink-0">{icon}</div>
-  <p class:list={["text-lg text-gray-700 pt-1", textClass]}>{text}</p>
+  <div class="text-3xl shrink-0">{icon}</div>
+  <p class:list={["text-lg pt-1", textClass]}>{text}</p>
 </div>

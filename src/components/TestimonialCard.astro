@@ -4,30 +4,44 @@ interface Props {
   quote: string;
   author: string;
   quoteClass?: string;
-  variant?: 'light' | 'dark';
+  variant?: "light" | "dark" | "christmas";
 }
 
-const { quote, author, quoteClass = '', variant = 'light' } = Astro.props;
+const { quote, author, quoteClass = "", variant = "light" } = Astro.props;
 
-const cardClasses = variant === 'dark'
-  ? 'bg-night-purple/70 border border-halloween-orange-bright/20'
-  : 'bg-white';
+const cardClasses =
+  variant === "dark"
+    ? "bg-night-purple/70 border border-halloween-orange-bright/20"
+    : variant === "christmas"
+      ? "bg-christmas-red border-2 border-christmas-gold/40"
+      : "bg-white";
 
-const quoteMarkColor = variant === 'dark'
-  ? 'text-halloween-orange-bright'
-  : 'text-brand-orange';
+const quoteMarkColor =
+  variant === "dark"
+    ? "text-halloween-orange-bright"
+    : variant === "christmas"
+      ? "text-christmas-gold"
+      : "text-brand-orange";
 
-const defaultQuoteColor = variant === 'dark'
-  ? 'text-moon-cream'
-  : 'text-gray-700';
+const defaultQuoteColor =
+  variant === "dark"
+    ? "text-moon-cream"
+    : variant === "christmas"
+      ? "text-christmas-cream"
+      : "text-gray-700";
 
-const authorColor = variant === 'dark'
-  ? 'text-halloween-orange-bright'
-  : 'text-brand-purple';
+const authorColor =
+  variant === "dark"
+    ? "text-halloween-orange-bright"
+    : variant === "christmas"
+      ? "text-christmas-light-gold"
+      : "text-brand-purple";
 ---
 
 <div class:list={[cardClasses, "rounded-2xl p-6 shadow-lg"]}>
   <div class:list={["text-4xl mb-4", quoteMarkColor]}>"</div>
-  <p class:list={["text-lg italic mb-4", defaultQuoteColor, quoteClass]}>{quote}</p>
+  <p class:list={["text-lg italic mb-4", defaultQuoteColor, quoteClass]}>
+    {quote}
+  </p>
   <p class:list={["font-bold", authorColor]}>— {author}</p>
 </div>

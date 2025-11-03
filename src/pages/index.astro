@@ -1,5 +1,6 @@
 ---
-import loteriaLogo from "../assets/images/logos/loteria-halloween-logo.png";
+import loteriaChristmasLogo from "../assets/images/logos/loteria-christmas-logo.png";
+import loteriaHalloweenLogo from "../assets/images/logos/loteria-halloween-logo.png";
 import Button from "../components/Button.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
@@ -25,8 +26,8 @@ import Layout from "../layouts/Layout.astro";
             Creamos juegos de mesa divertidos que unen a las familias y
             estimulan la imaginación de los niños.
           </p>
-          <Button variant="primary" href="#juegos">
-            Descubre nuestro primer juego
+          <Button variant="secondary" href="#juegos">
+            Descubre nuestros juegos
           </Button>
         </div>
       </div>
@@ -93,29 +94,56 @@ import Layout from "../layouts/Layout.astro";
         >
           Nuestros juegos
         </h2>
-        <div class="max-w-4xl mx-auto">
-          <div
-            class="bg-linear-to-br from-brand-orange/10 to-brand-yellow/10 rounded-3xl p-8 md:p-12 shadow-xl"
-          >
-            <div class="text-center">
-              <div class="flex justify-center mb-6">
-                <img
-                  src={loteriaLogo.src}
-                  alt="Lotería de Halloween"
-                  class="h-32 md:h-40"
-                />
+        <div class="max-w-6xl mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Halloween Game Card -->
+            <div
+              class="bg-linear-to-br from-brand-orange/10 to-brand-yellow/10 rounded-3xl p-8 md:p-12 shadow-xl hover:shadow-2xl transition-shadow duration-300"
+            >
+              <div class="text-center">
+                <div class="flex justify-center mb-6">
+                  <img
+                    src={loteriaHalloweenLogo.src}
+                    alt="Lotería de Halloween"
+                    class="h-32 md:h-40"
+                  />
+                </div>
+                <h3
+                  class="text-2xl md:text-3xl font-bold text-brand-purple mb-4"
+                >
+                  Lotería de Halloween
+                </h3>
+                <p class="text-base md:text-lg text-gray-700 mb-8">
+                  Una versión mágica y divertida del clásico mexicano, con
+                  personajes de Halloween tiernos y coloridos.
+                </p>
+                <Button variant="halloween" href="/halloween"> Ver más </Button>
               </div>
-              <h3
-                class="text-3xl md:text-4xl font-bold text-brand-purple mb-4 hidden"
-              >
-                Lotería de Halloween
-              </h3>
-              <p class="text-lg md:text-xl text-gray-700 mb-8">
-                Nuestro primer juego es una versión mágica y divertida del
-                clásico mexicano, con personajes de Halloween tiernos y
-                coloridos.
-              </p>
-              <Button variant="secondary" href="/halloween"> Ver más </Button>
+            </div>
+
+            <!-- Christmas Game Card -->
+            <div
+              class="bg-christmas-warm-cream rounded-3xl p-8 md:p-12 shadow-xl hover:shadow-2xl transition-shadow duration-300"
+            >
+              <div class="text-center">
+                <div class="flex justify-center mb-6">
+                  <img
+                    src={loteriaChristmasLogo.src}
+                    alt="Lotería de Halloween"
+                    class="h-32 md:h-40"
+                  />
+                </div>
+                <h3
+                  class="text-2xl md:text-3xl font-bold text-christmas-red mb-4"
+                >
+                  Lotería de Navidad
+                </h3>
+                <p class="text-base md:text-lg text-gray-700 mb-8">
+                  Celebra la Navidad en familia con esta versión festiva del
+                  clásico juego mexicano, con personajes navideños encantadores.
+                </p>
+                <Button variant="christmas" href="/christmas"> Ver más </Button>
+              </div>
             </div>
           </div>
         </div>

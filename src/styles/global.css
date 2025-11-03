@@ -20,6 +20,19 @@
   --color-moon-glow: #fff8dc;
   --color-halloween-orange-bright: #ff8c42;
 
+  /* Christmas theme colors */
+  --color-christmas-red: #c41e3a;
+  --color-christmas-green: #165b33;
+  --color-christmas-gold: #d4af37;
+  --color-christmas-cream: #fffef9;
+  --color-christmas-warm-cream: #fdf5e6;
+  --color-christmas-dark-red: #8b0000;
+  --color-christmas-light-red: #d65d5d;
+  --color-christmas-pine: #0f4c2a;
+  --color-christmas-snow: #f8f9fa;
+  --color-christmas-silver: #c0c0c0;
+  --color-christmas-light-gold: #ffd700;
+  --color-christmas-berry: #a52a2a;
   /* Extended border radius for playful design */
   --radius-xl: 1rem;
   --radius-2xl: 1.5rem;

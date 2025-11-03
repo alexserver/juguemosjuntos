@@ -9,7 +9,7 @@ interface Props {
   description: string;
   titleClass?: string;
   descriptionClass?: string;
-  variant?: "light" | "dark";
+  variant?: "light" | "dark" | "christmas";
 }
 
 const {
@@ -22,13 +22,26 @@ const {
   variant = "light",
 } = Astro.props;
 
-const cardClasses = variant === "dark" ? "bg-violet-800" : "bg-white";
+const cardClasses =
+  variant === "dark"
+    ? "bg-violet-800"
+    : variant === "christmas"
+      ? "bg-christmas-red border-2 border-christmas-gold/30"
+      : "bg-white";
 
 const defaultTitleColor =
-  variant === "dark" ? "text-moon-glow" : "text-brand-purple";
+  variant === "dark"
+    ? "text-moon-glow"
+    : variant === "christmas"
+      ? "text-christmas-light-gold"
+      : "text-brand-purple";
 
 const defaultDescriptionColor =
-  variant === "dark" ? "text-moon-cream" : "text-gray-600";
+  variant === "dark"
+    ? "text-moon-cream"
+    : variant === "christmas"
+      ? "text-christmas-cream"
+      : "text-gray-600";
 ---
 
 <div

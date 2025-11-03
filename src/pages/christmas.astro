@@ -1,5 +1,5 @@
 ---
-import loteriaLogo from "../assets/images/logos/loteria-halloween-logo.png";
+import loteriaLogo from "../assets/images/logos/loteria-christmas-logo.png";
 import Button from "../components/Button.astro";
 import FeatureList from "../components/FeatureList.astro";
 import Footer from "../components/Footer.astro";
@@ -9,24 +9,24 @@ import ValueCard from "../components/ValueCard.astro";
 import Layout from "../layouts/Layout.astro";
 
 // Character images
-import char01 from "../assets/images/halloween/characters/01.png";
-import char02 from "../assets/images/halloween/characters/02.png";
-import char03 from "../assets/images/halloween/characters/03.png";
-import char04 from "../assets/images/halloween/characters/04.png";
-import char05 from "../assets/images/halloween/characters/05.png";
-import char06 from "../assets/images/halloween/characters/06.png";
-import char07 from "../assets/images/halloween/characters/07.png";
-import char08 from "../assets/images/halloween/characters/08.png";
-import char09 from "../assets/images/halloween/characters/09.png";
+import char01 from "../assets/images/christmas/characters/01.png";
+import char02 from "../assets/images/christmas/characters/02.png";
+import char03 from "../assets/images/christmas/characters/03.png";
+import char04 from "../assets/images/christmas/characters/04.png";
+import char05 from "../assets/images/christmas/characters/05.png";
+import char06 from "../assets/images/christmas/characters/06.png";
+import char07 from "../assets/images/christmas/characters/07.png";
+import char08 from "../assets/images/christmas/characters/08.png";
+import char09 from "../assets/images/christmas/characters/09.png";
 
 // Value card images
-import arteImg from "../assets/images/halloween/misc/arte.png";
-import disenioImg from "../assets/images/halloween/misc/disenio.png";
-import diversionImg from "../assets/images/halloween/misc/diversion.png";
-import memoriaImg from "../assets/images/halloween/misc/memoria.png";
+import arteImg from "../assets/images/christmas/misc/arte.png";
+import disenioImg from "../assets/images/christmas/misc/disenio.png";
+import diversionImg from "../assets/images/christmas/misc/diversion.png";
+import memoriaImg from "../assets/images/christmas/misc/memoria.png";
 
 // Character data
-import charactersData from "../data/characters.json";
+import charactersData from "../data/christmas-characters.json";
 
 const characterImages = [
   char01,
@@ -47,18 +47,16 @@ const characters = charactersData.map((charData, index) => ({
 
 // WhatsApp configuration
 const whatsappNumber = import.meta.env.PUBLIC_WHATSAPP_NUMBER;
-const whatsappMessage = import.meta.env.PUBLIC_WHATSAPP_MESSAGE_HALLOWEEN;
+const whatsappMessage = import.meta.env.PUBLIC_WHATSAPP_MESSAGE_CHRISTMAS;
 const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 ---
 
-<Layout title="Lotería de Halloween - Juguemos Juntos">
+<Layout title="Lotería de Navidad - Juguemos Juntos">
   <Header />
 
   <main>
     <!-- Hero Section -->
-    <section
-      class="bg-linear-to-br from-night-dark via-night-purple to-night-blue py-20 md:py-32"
-    >
+    <section class="bg-christmas-warm-cream py-20 md:py-32">
       <div class="container mx-auto px-4">
         <div class="max-w-5xl mx-auto">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -66,7 +64,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
             <div class="flex justify-center">
               <img
                 src={loteriaLogo.src}
-                alt="Lotería de Halloween"
+                alt="Lotería de Navidad"
                 class="w-full max-w-md"
               />
             </div>
@@ -74,15 +72,15 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
             <!-- Hero Content -->
             <div class="text-center md:text-left">
               <h1
-                class="text-4xl md:text-6xl font-bold text-halloween-orange-bright mb-6"
+                class="text-4xl md:text-6xl font-bold text-christmas-red mb-6"
               >
-                ¡Lotería de Halloween! 👻
+                ¡Lotería de Navidad! 🎄
               </h1>
-              <p class="text-xl md:text-2xl text-moon-cream mb-8">
-                Una versión mágica y divertida del clásico juego mexicano.
-                Perfecta para niños y fiestas familiares.
+              <p class="text-xl md:text-2xl text-gray-700 mb-8">
+                Una versión festiva y mágica del clásico juego mexicano.
+                Perfecta para celebrar en familia durante las fiestas.
               </p>
-              <Button variant="halloween" href={whatsappLink} target="_blank">
+              <Button variant="christmas" href={whatsappLink} target="_blank">
                 Cómprala ahora
               </Button>
             </div>
@@ -92,29 +90,29 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
     </section>
 
     <!-- Qué Incluye Section -->
-    <section class="py-20 bg-night-dark">
+    <section class="py-20 bg-christmas-red">
       <div class="container mx-auto px-4">
         <div class="max-w-3xl mx-auto">
           <h2
-            class="text-3xl md:text-5xl font-bold text-moon-glow mb-12 text-center"
+            class="text-3xl md:text-5xl font-bold text-christmas-snow mb-12 text-center"
           >
-            ¿Qué incluye la Lotería de Halloween?
+            ¿Qué incluye la Lotería de Navidad?
           </h2>
           <div class="space-y-6">
             <FeatureList
-              icon="🎭"
-              text="24 personajes únicos (brujita, vampiro, momia, fantasma, etc.)"
-              textClass="text-moon-cream"
+              icon="🎅"
+              text="24 personajes únicos navideños (Santa, reno, muñeco de nieve, etc.)"
+              textClass="text-christmas-snow"
             />
             <FeatureList
               icon="📋"
               text="12 cartillas de juego"
-              textClass="text-moon-cream"
+              textClass="text-christmas-snow"
             />
             <FeatureList
               icon="🌱"
               text="Versión impresa y ecológica"
-              textClass="text-moon-cream"
+              textClass="text-christmas-snow"
             />
           </div>
         </div>
@@ -122,10 +120,10 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
     </section>
 
     <!-- Por Qué Te Encantará Section -->
-    <section class="py-20 bg-indigo-950">
+    <section class="py-20 bg-christmas-green">
       <div class="container mx-auto px-4">
         <h2
-          class="text-3xl md:text-5xl font-bold text-halloween-orange-bright mb-12 text-center"
+          class="text-3xl md:text-5xl font-bold text-christmas-light-gold mb-12 text-center"
         >
           ¿Por qué te encantará?
         </h2>
@@ -136,41 +134,41 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
             image={diversionImg}
             title="Diversión en familia"
             description="Perfecto para compartir momentos especiales juntos."
-            variant="dark"
+            variant="christmas"
           />
           <ValueCard
             image={disenioImg}
-            title="Diseños tiernos"
-            description="No aterradores, diseñados para todas las edades."
-            variant="dark"
+            title="Diseños festivos"
+            description="Personajes navideños encantadores para todas las edades."
+            variant="christmas"
           />
           <ValueCard
             image={arteImg}
             title="Arte exclusivo"
             description="Ilustraciones coloridas y originales."
-            variant="dark"
+            variant="christmas"
           />
           <ValueCard
             image={memoriaImg}
             title="Educativo"
             description="Estimula memoria y vocabulario en niños."
-            variant="dark"
+            variant="christmas"
           />
         </div>
       </div>
     </section>
 
     <!-- Galería de Cartas Section -->
-    <section class="py-20 bg-linear-to-b from-night-blue/80 to-night-dark">
+    <section class="py-20 bg-christmas-red">
       <div class="container mx-auto px-4">
         <h2
-          class="text-3xl md:text-5xl font-bold text-moon-glow mb-6 text-center"
+          class="text-3xl md:text-5xl font-bold text-christmas-light-gold mb-6 text-center"
         >
           Conoce a los personajes
         </h2>
-        <p class="text-center text-moon-cream mb-12 max-w-2xl mx-auto">
+        <p class="text-center text-christmas-cream mb-12 max-w-2xl mx-auto">
           Cada personaje fue diseñado con amor y color para que los niños
-          aprendan mientras juegan.
+          aprendan mientras celebran la Navidad.
         </p>
 
         <!-- Character cards -->
@@ -179,7 +177,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
         >
           {
             characters.map((character) => (
-              <div class="aspect-square rounded-2xl overflow-hidden shadow-lg shadow-halloween-orange-bright/20 hover:shadow-2xl hover:shadow-halloween-orange-bright/40 transition-all duration-300 hover:scale-105 border-2 border-halloween-orange-bright/20 flex flex-col">
+              <div class="aspect-square rounded-2xl overflow-hidden shadow-lg shadow-christmas-gold/20 hover:shadow-2xl hover:shadow-christmas-gold/40 transition-all duration-300 hover:scale-105 border-2 border-christmas-gold/20 flex flex-col">
                 <div class="flex-1 overflow-hidden">
                   <img
                     src={character.image.src}
@@ -187,7 +185,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
                     class="w-full h-full object-cover"
                   />
                 </div>
-                <div class="bg-moon-cream text-gray-800 py-3 px-4 text-center font-semibold">
+                <div class="bg-christmas-cream text-gray-800 py-3 px-4 text-center font-semibold">
                   {character.name}
                 </div>
               </div>
@@ -198,19 +196,17 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
     </section>
 
     <!-- Cómo Jugar Section -->
-    <section
-      class="py-20 bg-linear-to-br from-night-dark via-night-purple to-night-blue text-white"
-    >
+    <section class="py-20 bg-christmas-pine text-white">
       <div class="container mx-auto px-4">
         <h2
-          class="text-3xl md:text-5xl font-bold mb-12 text-center text-halloween-orange-bright"
+          class="text-3xl md:text-5xl font-bold mb-12 text-center text-christmas-gold"
         >
           Cómo jugar
         </h2>
         <div class="max-w-3xl mx-auto space-y-8">
           <div class="flex items-start gap-4">
             <div
-              class="shrink-0 w-12 h-12 bg-brand-orange text-white rounded-full flex items-center justify-center text-xl font-bold"
+              class="shrink-0 w-12 h-12 bg-christmas-red text-white rounded-full flex items-center justify-center text-xl font-bold"
             >
               1
             </div>
@@ -218,18 +214,18 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
           </div>
           <div class="flex items-start gap-4">
             <div
-              class="shrink-0 w-12 h-12 bg-brand-orange text-white rounded-full flex items-center justify-center text-xl font-bold"
+              class="shrink-0 w-12 h-12 bg-christmas-red text-white rounded-full flex items-center justify-center text-xl font-bold"
             >
               2
             </div>
             <p class="text-lg pt-2">
-              Un jugador canta las cartas al estilo tradicional: "¡Laaaa
-              Brujitaaa!"
+              Un jugador canta las cartas al estilo tradicional: "¡Eeeeel Santa
+              Claus!"
             </p>
           </div>
           <div class="flex items-start gap-4">
             <div
-              class="shrink-0 w-12 h-12 bg-brand-orange text-white rounded-full flex items-center justify-center text-xl font-bold"
+              class="shrink-0 w-12 h-12 bg-christmas-red text-white rounded-full flex items-center justify-center text-xl font-bold"
             >
               3
             </div>
@@ -240,7 +236,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
           </div>
           <div class="flex items-start gap-4">
             <div
-              class="shrink-0 w-12 h-12 bg-brand-orange text-white rounded-full flex items-center justify-center text-xl font-bold"
+              class="shrink-0 w-12 h-12 bg-christmas-red text-white rounded-full flex items-center justify-center text-xl font-bold"
             >
               4
             </div>
@@ -254,48 +250,43 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
     </section>
 
     <!-- Testimonios Section -->
-    <section class="py-20 bg-linear-to-br from-night-purple/70 to-night-dark">
+    <section class="py-20 bg-christmas-warm-cream">
       <div class="container mx-auto px-4">
         <h2
-          class="text-3xl md:text-5xl font-bold text-moon-glow mb-12 text-center"
+          class="text-3xl md:text-5xl font-bold text-christmas-red mb-12 text-center"
         >
           Lo que dicen las familias
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           <TestimonialCard
-            quote="A mis hijos les encantó, se rieron muchísimo con los personajes."
+            quote="Perfecta para nuestra celebración navideña, a los niños les encantó."
             author="María"
-            variant="dark"
+            variant="christmas"
           />
           <TestimonialCard
-            quote="Una versión adorable del clásico, ideal para Halloween."
+            quote="Un regalo ideal para compartir en familia durante las fiestas."
             author="Carlos"
-            variant="dark"
+            variant="christmas"
           />
         </div>
       </div>
     </section>
 
     <!-- CTA Final Section -->
-    <section
-      id="comprar"
-      class="py-20 bg-linear-to-br from-night-dark via-night-purple to-brand-orange/20"
-    >
+    <section id="comprar" class="py-20 bg-christmas-green">
       <div class="container mx-auto px-4">
         <div class="max-w-3xl mx-auto text-center">
           <div
-            class="bg-night-purple/80 rounded-3xl p-12 shadow-2xl border-2 border-halloween-orange-bright/50"
+            class="bg-christmas-dark-red rounded-3xl p-12 shadow-2xl border-2 border-christmas-gold"
           >
-            <h2
-              class="text-3xl md:text-5xl font-bold text-halloween-orange-bright mb-6"
-            >
-              🎃 ¡Consíguela ahora y vive la magia de Halloween en familia!
+            <h2 class="text-3xl md:text-5xl font-bold text-christmas-gold mb-6">
+              🎄 ¡Consíguela ahora y celebra la Navidad en familia!
             </h2>
-            <p class="text-xl text-moon-cream mb-8">
+            <p class="text-xl text-christmas-cream mb-8">
               Por ahora solo vendemos versiones impresas. ¡Haz tu pedido hoy!
             </p>
             <Button
-              variant="halloween"
+              variant="christmas"
               class="text-xl px-8 py-4"
               href={whatsappLink}
               target="_blank"
