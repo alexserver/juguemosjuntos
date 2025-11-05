@@ -28,6 +28,9 @@ import memoriaImg from "../assets/images/christmas/misc/memoria.png";
 // Character data
 import charactersData from "../data/christmas-characters.json";
 
+// Product data
+import productsData from "../data/products.json";
+
 const characterImages = [
   char01,
   char02,
@@ -44,6 +47,10 @@ const characters = charactersData.map((charData, index) => ({
   ...charData,
   image: characterImages[index],
 }));
+
+// Product data
+const christmasProduct = productsData.find((p) => p.id === "christmas");
+const formattedPrice = `$${christmasProduct?.price} ${christmasProduct?.currency}`;
 
 // WhatsApp configuration
 const whatsappNumber = import.meta.env.PUBLIC_WHATSAPP_NUMBER;
@@ -80,6 +87,12 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
                 Una versión festiva y mágica del clásico juego mexicano.
                 Perfecta para celebrar en familia durante las fiestas.
               </p>
+              <div class="text-center md:text-left mb-4">
+                <span class="text-4xl md:text-5xl font-bold text-christmas-red">
+                  {formattedPrice}
+                </span>
+                <span class="text-lg text-gray-600 ml-2">+ envío</span>
+              </div>
               <Button variant="christmas" href={whatsappLink} target="_blank">
                 Cómprala ahora
               </Button>
@@ -285,6 +298,12 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
             <p class="text-xl text-christmas-cream mb-8">
               Por ahora solo vendemos versiones impresas. ¡Haz tu pedido hoy!
             </p>
+            <div class="text-center mb-6">
+              <span class="text-5xl md:text-6xl font-bold text-christmas-gold">
+                {formattedPrice}
+              </span>
+              <span class="text-xl text-christmas-cream/80 ml-2">+ envío</span>
+            </div>
             <Button
               variant="christmas"
               class="text-xl px-8 py-4"

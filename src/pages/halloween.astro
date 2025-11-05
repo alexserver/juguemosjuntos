@@ -28,6 +28,9 @@ import memoriaImg from "../assets/images/halloween/misc/memoria.png";
 // Character data
 import charactersData from "../data/characters.json";
 
+// Product data
+import productsData from "../data/products.json";
+
 const characterImages = [
   char01,
   char02,
@@ -44,6 +47,10 @@ const characters = charactersData.map((charData, index) => ({
   ...charData,
   image: characterImages[index],
 }));
+
+// Product data
+const halloweenProduct = productsData.find((p) => p.id === "halloween");
+const formattedPrice = `$${halloweenProduct?.price} ${halloweenProduct?.currency}`;
 
 // WhatsApp configuration
 const whatsappNumber = import.meta.env.PUBLIC_WHATSAPP_NUMBER;
@@ -82,6 +89,12 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
                 Una versión mágica y divertida del clásico juego mexicano.
                 Perfecta para niños y fiestas familiares.
               </p>
+              <div class="text-center md:text-left mb-4">
+                <span class="text-4xl md:text-5xl font-bold text-moon-cream">
+                  {formattedPrice}
+                </span>
+                <span class="text-lg text-moon-cream/80 ml-2">+ envío</span>
+              </div>
               <Button variant="halloween" href={whatsappLink} target="_blank">
                 Cómprala ahora
               </Button>
@@ -294,6 +307,12 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
             <p class="text-xl text-moon-cream mb-8">
               Por ahora solo vendemos versiones impresas. ¡Haz tu pedido hoy!
             </p>
+            <div class="text-center mb-6">
+              <span class="text-5xl md:text-6xl font-bold text-halloween-orange-bright">
+                {formattedPrice}
+              </span>
+              <span class="text-xl text-moon-cream/80 ml-2">+ envío</span>
+            </div>
             <Button
               variant="halloween"
               class="text-xl px-8 py-4"
