@@ -1,0 +1,22 @@
+---
+import { languages, getLangFromUrl, getCurrentPath } from "../utils/i18n";
+
+const currentLang = getLangFromUrl(Astro.url);
+const currentPath = getCurrentPath(Astro.url);
+---
+
+<div class="flex items-center gap-2">
+  {Object.entries(languages).map(([lang, label]) => (
+    <a
+      href={`/${lang}${currentPath}`}
+      class={`px-3 py-1 rounded-full text-sm font-semibold transition-all ${
+        currentLang === lang
+          ? "bg-brand-purple text-white"
+          : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+      }`}
+      aria-label={`Switch to ${label}`}
+    >
+      {lang.toUpperCase()}
+    </a>
+  ))}
+</div>

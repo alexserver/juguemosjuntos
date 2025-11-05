@@ -1,6 +1,17 @@
 ---
 // Footer component with links and social media
 import logo from "../assets/images/logos/juguemos-juntos-logo.png";
+import { getLangFromUrl, useTranslations } from "../utils/i18n";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// Map section IDs based on language
+const sectionIds = {
+  es: { home: "inicio", about: "sobre-nosotros", games: "juegos", contact: "contacto" },
+  en: { home: "home", about: "about", games: "games", contact: "contact" }
+};
+const sections = sectionIds[lang];
 ---
 
 <footer class="bg-brand-purple text-white py-12">
@@ -14,45 +25,44 @@ import logo from "../assets/images/logos/juguemos-juntos-logo.png";
           <h3 class="text-2xl font-bold">Juguemos Juntos</h3>
         </div>
         <p class="text-purple-100">
-          Creamos juegos de mesa divertidos que unen a las familias y estimulan
-          la imaginación de los niños.
+          {t('footer.tagline')}
         </p>
       </div>
 
       <!-- Links Section -->
       <div>
-        <h4 class="text-lg font-bold mb-4">Enlaces</h4>
+        <h4 class="text-lg font-bold mb-4">{lang === 'es' ? 'Enlaces' : 'Links'}</h4>
         <nav class="flex flex-col space-y-2">
           <a
-            href="/#inicio"
+            href={`/${lang}/#${sections.home}`}
             class="text-purple-100 hover:text-brand-yellow transition-colors"
           >
-            Inicio
+            {t('nav.home')}
           </a>
           <a
-            href="/#sobre-nosotros"
+            href={`/${lang}/#${sections.about}`}
             class="text-purple-100 hover:text-brand-yellow transition-colors"
           >
-            Sobre Nosotros
+            {t('nav.about')}
           </a>
           <a
-            href="/#juegos"
+            href={`/${lang}/#${sections.games}`}
             class="text-purple-100 hover:text-brand-yellow transition-colors"
           >
-            Juegos
+            {t('nav.games')}
           </a>
           <a
-            href="/#contacto"
+            href={`/${lang}/#${sections.contact}`}
             class="hidden text-purple-100 hover:text-brand-yellow transition-colors"
           >
-            Contacto
+            {t('nav.contact')}
           </a>
         </nav>
       </div>
 
       <!-- Contact Section -->
       <div>
-        <h4 class="text-lg font-bold mb-4">Contacto</h4>
+        <h4 class="text-lg font-bold mb-4">{lang === 'es' ? 'Contacto' : 'Contact'}</h4>
         <div class="space-y-3">
           <a
             href="mailto:hola@juguemosjuntos.store"
@@ -96,7 +106,7 @@ import logo from "../assets/images/logos/juguemos-juntos-logo.png";
 
     <!-- Copyright -->
     <div class="border-t border-purple-400/30 pt-8 text-center text-purple-100">
-      <p>&copy; 2025 Juguemos Juntos. Todos los derechos reservados.</p>
+      <p>&copy; 2025 Juguemos Juntos. {t('footer.rights')}</p>
     </div>
   </div>
 </footer>

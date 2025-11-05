@@ -1,11 +1,24 @@
-[
-  { "id": 1, "name": "La Brujita", "filename": "01.png" },
-  { "id": 2, "name": "El Fantasma", "filename": "02.png" },
-  { "id": 3, "name": "El Vampiro", "filename": "03.png" },
-  { "id": 4, "name": "La Momia", "filename": "04.png" },
-  { "id": 5, "name": "El Lobo", "filename": "05.png" },
-  { "id": 6, "name": "El Esqueleto", "filename": "06.png" },
-  { "id": 7, "name": "La Calabaza", "filename": "07.png" },
-  { "id": 8, "name": "El Murciélago", "filename": "08.png" },
-  { "id": 9, "name": "El Zombie", "filename": "09.png" }
-]
+{
+  "halloween": [
+    { "id": 1, "name": { "es": "La Brujita", "en": "The Little Witch" }, "filename": "01.png" },
+    { "id": 2, "name": { "es": "El Fantasma", "en": "The Ghost" }, "filename": "02.png" },
+    { "id": 3, "name": { "es": "El Vampiro", "en": "The Vampire" }, "filename": "03.png" },
+    { "id": 4, "name": { "es": "La Momia", "en": "The Mummy" }, "filename": "04.png" },
+    { "id": 5, "name": { "es": "El Lobo", "en": "The Werewolf" }, "filename": "05.png" },
+    { "id": 6, "name": { "es": "El Esqueleto", "en": "The Skeleton" }, "filename": "06.png" },
+    { "id": 7, "name": { "es": "La Calabaza", "en": "The Pumpkin" }, "filename": "07.png" },
+    { "id": 8, "name": { "es": "El Murciélago", "en": "The Bat" }, "filename": "08.png" },
+    { "id": 9, "name": { "es": "El Zombie", "en": "The Zombie" }, "filename": "09.png" }
+  ],
+  "christmas": [
+    { "id": 1, "name": { "es": "Santa Claus", "en": "Santa Claus" }, "filename": "01.png" },
+    { "id": 2, "name": { "es": "Sra. Claus", "en": "Mrs. Claus" }, "filename": "02.png" },
+    { "id": 3, "name": { "es": "Rodolfo el Reno", "en": "Rudolph the Reindeer" }, "filename": "03.png" },
+    { "id": 4, "name": { "es": "El Duende", "en": "The Elf" }, "filename": "04.png" },
+    { "id": 5, "name": { "es": "Los Regalos", "en": "The Presents" }, "filename": "05.png" },
+    { "id": 6, "name": { "es": "La Estrellita", "en": "The Little Star" }, "filename": "06.png" },
+    { "id": 7, "name": { "es": "El Arbolito de Navidad", "en": "The Christmas Tree" }, "filename": "07.png" },
+    { "id": 8, "name": { "es": "El Copo de Nieve", "en": "The Snowflake" }, "filename": "08.png" },
+    { "id": 9, "name": { "es": "El Muñeco de Nieve", "en": "The Snowman" }, "filename": "09.png" }
+  ]
+}

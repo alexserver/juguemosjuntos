@@ -1,14 +1,36 @@
 [
   {
     "id": "halloween",
-    "name": "Lotería de Halloween",
-    "price": 120,
-    "currency": "MXN"
+    "name": {
+      "es": "Lotería de Halloween",
+      "en": "Halloween Lotería"
+    },
+    "price": {
+      "es": {
+        "amount": 120,
+        "currency": "MXN"
+      },
+      "en": {
+        "amount": 15,
+        "currency": "USD"
+      }
+    }
   },
   {
     "id": "christmas",
-    "name": "Lotería de Navidad",
-    "price": 120,
-    "currency": "MXN"
+    "name": {
+      "es": "Lotería de Navidad",
+      "en": "Christmas Lotería"
+    },
+    "price": {
+      "es": {
+        "amount": 120,
+        "currency": "MXN"
+      },
+      "en": {
+        "amount": 15,
+        "currency": "USD"
+      }
+    }
   }
 ]

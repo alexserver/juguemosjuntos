@@ -1,0 +1,182 @@
+---
+import loteriaChristmasLogo from "../../assets/images/logos/loteria-christmas-logo.png";
+import loteriaHalloweenLogo from "../../assets/images/logos/loteria-halloween-logo.png";
+import Button from "../../components/Button.astro";
+import Footer from "../../components/Footer.astro";
+import Header from "../../components/Header.astro";
+import ValueCard from "../../components/ValueCard.astro";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Juguemos Juntos - Juegos de Mesa para Toda la Familia">
+  <Header />
+
+  <main>
+    <!-- Hero Section -->
+    <section
+      id="inicio"
+      class="bg-linear-to-br from-brand-yellow/20 via-brand-turquoise/20 to-brand-purple/20 py-20 md:py-32"
+    >
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-6xl font-bold text-brand-purple mb-6">
+            Juguemos juntos y aprendamos jugando 🎲💛
+          </h1>
+          <p class="text-xl md:text-2xl text-gray-700 mb-8">
+            Creamos juegos de mesa divertidos que unen a las familias y
+            estimulan la imaginación de los niños.
+          </p>
+          <Button variant="secondary" href="#juegos">
+            Descubre nuestros juegos
+          </Button>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section (Quiénes Somos) -->
+    <section id="sobre-nosotros" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-3xl md:text-5xl font-bold text-brand-purple mb-6">
+            Nuestra historia
+          </h2>
+          <p class="text-lg md:text-xl text-gray-700 leading-relaxed">
+            Juguemos Juntos nació de nuestra pasión por los juegos de mesa y los
+            momentos en familia. Queremos que cada juego sea una oportunidad
+            para reír, aprender y compartir.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission & Values Section -->
+    <section
+      class="py-20 bg-linear-to-br from-brand-purple/5 to-brand-turquoise/5"
+    >
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-3xl md:text-5xl font-bold text-brand-purple mb-12 text-center"
+        >
+          Nuestra misión y valores
+        </h2>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto"
+        >
+          <ValueCard
+            icon="🎯"
+            title="Diversión educativa"
+            description="Cada juego enseña algo nuevo."
+          />
+          <ValueCard
+            icon="💞"
+            title="Conexión familiar"
+            description="Fortalecer lazos entre padres e hijos."
+          />
+          <ValueCard
+            icon="🌱"
+            title="Creatividad"
+            description="Fomentar la imaginación y curiosidad."
+          />
+          <ValueCard
+            icon="🌎"
+            title="Inclusión"
+            description="Juegos pensados para todos."
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Games Section -->
+    <section id="juegos" class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-3xl md:text-5xl font-bold text-brand-purple mb-12 text-center"
+        >
+          Nuestros juegos
+        </h2>
+        <div class="max-w-6xl mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Halloween Game Card -->
+            <div
+              class="bg-linear-to-br from-brand-orange/10 to-brand-yellow/10 rounded-3xl p-8 md:p-12 shadow-xl hover:shadow-2xl transition-shadow duration-300"
+            >
+              <div class="text-center">
+                <div class="flex justify-center mb-6">
+                  <img
+                    src={loteriaHalloweenLogo.src}
+                    alt="Lotería de Halloween"
+                    class="h-32 md:h-40"
+                  />
+                </div>
+                <h3
+                  class="text-2xl md:text-3xl font-bold text-brand-purple mb-4"
+                >
+                  Lotería de Halloween
+                </h3>
+                <p class="text-base md:text-lg text-gray-700 mb-8">
+                  Una versión mágica y divertida del clásico mexicano, con
+                  personajes de Halloween tiernos y coloridos.
+                </p>
+                <Button variant="halloween" href="/es/halloween"> Ver más </Button>
+              </div>
+            </div>
+
+            <!-- Christmas Game Card -->
+            <div
+              class="bg-christmas-warm-cream rounded-3xl p-8 md:p-12 shadow-xl hover:shadow-2xl transition-shadow duration-300"
+            >
+              <div class="text-center">
+                <div class="flex justify-center mb-6">
+                  <img
+                    src={loteriaChristmasLogo.src}
+                    alt="Lotería de Halloween"
+                    class="h-32 md:h-40"
+                  />
+                </div>
+                <h3
+                  class="text-2xl md:text-3xl font-bold text-christmas-red mb-4"
+                >
+                  Lotería de Navidad
+                </h3>
+                <p class="text-base md:text-lg text-gray-700 mb-8">
+                  Celebra la Navidad en familia con esta versión festiva del
+                  clásico juego mexicano, con personajes navideños encantadores.
+                </p>
+                <Button variant="christmas" href="/es/christmas"> Ver más </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section
+      id="contacto"
+      class="hidden py-20 bg-linear-to-br from-brand-turquoise/20 to-brand-purple/20"
+    >
+      <div class="container mx-auto px-4">
+        <div class="max-w-2xl mx-auto text-center">
+          <h2 class="text-3xl md:text-5xl font-bold text-brand-purple mb-6">
+            ¿Quieres enterarte de nuestros próximos juegos?
+          </h2>
+          <p class="text-lg md:text-xl text-gray-700 mb-8">
+            Suscríbete para recibir noticias, lanzamientos y actividades
+            divertidas.
+          </p>
+          <form class="flex flex-col md:flex-row gap-4 justify-center">
+            <input
+              type="email"
+              placeholder="Tu correo electrónico"
+              class="px-6 py-3 rounded-3xl border-2 border-brand-purple focus:outline-none focus:ring-2 focus:ring-brand-purple flex-1 max-w-md"
+              required
+            />
+            <Button variant="primary"> ¡Sí, quiero jugar más! </Button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

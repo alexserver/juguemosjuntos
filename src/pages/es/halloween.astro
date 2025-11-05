@@ -1,35 +1,35 @@
 ---
-import loteriaLogo from "../assets/images/logos/loteria-halloween-logo.png";
-import Button from "../components/Button.astro";
-import FeatureList from "../components/FeatureList.astro";
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
-import TestimonialCard from "../components/TestimonialCard.astro";
-import ValueCard from "../components/ValueCard.astro";
-import Layout from "../layouts/Layout.astro";
+import loteriaLogo from "../../assets/images/logos/loteria-halloween-logo.png";
+import Button from "../../components/Button.astro";
+import FeatureList from "../../components/FeatureList.astro";
+import Footer from "../../components/Footer.astro";
+import Header from "../../components/Header.astro";
+import TestimonialCard from "../../components/TestimonialCard.astro";
+import ValueCard from "../../components/ValueCard.astro";
+import Layout from "../../layouts/Layout.astro";
 
 // Character images
-import char01 from "../assets/images/halloween/characters/01.png";
-import char02 from "../assets/images/halloween/characters/02.png";
-import char03 from "../assets/images/halloween/characters/03.png";
-import char04 from "../assets/images/halloween/characters/04.png";
-import char05 from "../assets/images/halloween/characters/05.png";
-import char06 from "../assets/images/halloween/characters/06.png";
-import char07 from "../assets/images/halloween/characters/07.png";
-import char08 from "../assets/images/halloween/characters/08.png";
-import char09 from "../assets/images/halloween/characters/09.png";
+import char01 from "../../assets/images/halloween/characters/01.png";
+import char02 from "../../assets/images/halloween/characters/02.png";
+import char03 from "../../assets/images/halloween/characters/03.png";
+import char04 from "../../assets/images/halloween/characters/04.png";
+import char05 from "../../assets/images/halloween/characters/05.png";
+import char06 from "../../assets/images/halloween/characters/06.png";
+import char07 from "../../assets/images/halloween/characters/07.png";
+import char08 from "../../assets/images/halloween/characters/08.png";
+import char09 from "../../assets/images/halloween/characters/09.png";
 
 // Value card images
-import arteImg from "../assets/images/halloween/misc/arte.png";
-import disenioImg from "../assets/images/halloween/misc/disenio.png";
-import diversionImg from "../assets/images/halloween/misc/diversion.png";
-import memoriaImg from "../assets/images/halloween/misc/memoria.png";
+import arteImg from "../../assets/images/halloween/misc/arte.png";
+import disenioImg from "../../assets/images/halloween/misc/disenio.png";
+import diversionImg from "../../assets/images/halloween/misc/diversion.png";
+import memoriaImg from "../../assets/images/halloween/misc/memoria.png";
 
 // Character data
-import charactersData from "../data/characters.json";
+import charactersData from "../../data/characters.json";
 
 // Product data
-import productsData from "../data/products.json";
+import productsData from "../../data/products.json";
 
 const characterImages = [
   char01,
@@ -43,14 +43,15 @@ const characterImages = [
   char09,
 ];
 
-const characters = charactersData.map((charData, index) => ({
+const characters = charactersData.halloween.map((charData, index) => ({
   ...charData,
   image: characterImages[index],
 }));
 
 // Product data
 const halloweenProduct = productsData.find((p) => p.id === "halloween");
-const formattedPrice = `$${halloweenProduct?.price} ${halloweenProduct?.currency}`;
+const priceData = halloweenProduct?.price.es;
+const formattedPrice = `$${priceData?.amount} ${priceData?.currency}`;
 
 // WhatsApp configuration
 const whatsappNumber = import.meta.env.PUBLIC_WHATSAPP_NUMBER;
@@ -196,12 +197,12 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
                 <div class="flex-1 overflow-hidden">
                   <img
                     src={character.image.src}
-                    alt={character.name}
+                    alt={character.name.es}
                     class="w-full h-full object-cover"
                   />
                 </div>
                 <div class="bg-moon-cream text-gray-800 py-3 px-4 text-center font-semibold">
-                  {character.name}
+                  {character.name.es}
                 </div>
               </div>
             ))

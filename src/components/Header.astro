@@ -1,40 +1,59 @@
 ---
 // Header component with navigation
 import logo from "../assets/images/logos/juguemos-juntos-logo.png";
+import LanguageSwitcher from "./LanguageSwitcher.astro";
+import { getLangFromUrl, useTranslations } from "../utils/i18n";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// Build language-aware URLs
+const homeUrl = `/${lang}/`;
+const aboutUrl = `/${lang}/#about`;
+const gamesUrl = `/${lang}/#games`;
+const contactUrl = `/${lang}/#contact`;
+
+// Map section IDs based on language
+const sectionIds = {
+  es: { home: "inicio", about: "sobre-nosotros", games: "juegos", contact: "contacto" },
+  en: { home: "home", about: "about", games: "games", contact: "contact" }
+};
+const sections = sectionIds[lang];
 ---
 
 <header class="sticky top-0 z-50 bg-white shadow-md">
   <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
     <!-- Logo -->
     <div class="flex items-center">
-      <a href="/" class="flex items-center hover:opacity-80 transition-opacity">
+      <a href={homeUrl} class="flex items-center hover:opacity-80 transition-opacity">
         <img src={logo.src} alt="Juguemos Juntos" class="h-12 md:h-16" />
       </a>
     </div>
 
     <!-- Desktop Navigation -->
-    <div class="hidden md:flex items-center space-x-8">
-      <a href="/#inicio" class="text-gray-700 hover:text-brand-purple transition-colors font-semibold">
-        Inicio
+    <div class="hidden md:flex items-center space-x-6">
+      <a href={`/${lang}/#${sections.home}`} class="text-gray-700 hover:text-brand-purple transition-colors font-semibold">
+        {t('nav.home')}
       </a>
-      <a href="/#sobre-nosotros" class="text-gray-700 hover:text-brand-purple transition-colors font-semibold">
-        Sobre Nosotros
+      <a href={`/${lang}/#${sections.about}`} class="text-gray-700 hover:text-brand-purple transition-colors font-semibold">
+        {t('nav.about')}
       </a>
-      <a href="/#juegos" class="text-gray-700 hover:text-brand-purple transition-colors font-semibold">
-        Juegos
+      <a href={`/${lang}/#${sections.games}`} class="text-gray-700 hover:text-brand-purple transition-colors font-semibold">
+        {t('nav.games')}
       </a>
-      <a href="/#contacto" class="hidden text-gray-700 hover:text-brand-purple transition-colors font-semibold">
-        Contacto
+      <a href={`/${lang}/#${sections.contact}`} class="hidden text-gray-700 hover:text-brand-purple transition-colors font-semibold">
+        {t('nav.contact')}
       </a>
+      <LanguageSwitcher />
     </div>
 
-    <!-- CTA Button -->
-    <div class="hidden md:block">
+    <!-- CTA Button and Mobile Menu -->
+    <div class="hidden md:flex items-center gap-4">
       <a
-        href="/#juegos"
+        href={`/${lang}/#${sections.games}`}
         class="px-6 py-3 bg-brand-purple text-white font-bold rounded-3xl hover:brightness-110 transition-all shadow-lg"
       >
-        Ver nuestros juegos 🎲
+        {t('nav.cta')}
       </a>
     </div>
 
@@ -53,23 +72,24 @@ import logo from "../assets/images/logos/juguemos-juntos-logo.png";
   <!-- Mobile Menu -->
   <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
     <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
-      <a href="/#inicio" class="text-gray-700 hover:text-brand-purple transition-colors font-semibold">
-        Inicio
+      <a href={`/${lang}/#${sections.home}`} class="text-gray-700 hover:text-brand-purple transition-colors font-semibold">
+        {t('nav.home')}
       </a>
-      <a href="/#sobre-nosotros" class="text-gray-700 hover:text-brand-purple transition-colors font-semibold">
-        Sobre Nosotros
+      <a href={`/${lang}/#${sections.about}`} class="text-gray-700 hover:text-brand-purple transition-colors font-semibold">
+        {t('nav.about')}
       </a>
-      <a href="/#juegos" class="text-gray-700 hover:text-brand-purple transition-colors font-semibold">
-        Juegos
+      <a href={`/${lang}/#${sections.games}`} class="text-gray-700 hover:text-brand-purple transition-colors font-semibold">
+        {t('nav.games')}
       </a>
-      <a href="/#contacto" class="hidden text-gray-700 hover:text-brand-purple transition-colors font-semibold">
-        Contacto
+      <a href={`/${lang}/#${sections.contact}`} class="hidden text-gray-700 hover:text-brand-purple transition-colors font-semibold">
+        {t('nav.contact')}
       </a>
+      <LanguageSwitcher />
       <a
-        href="/#juegos"
+        href={`/${lang}/#${sections.games}`}
         class="px-6 py-3 bg-brand-purple text-white font-bold rounded-3xl hover:brightness-110 transition-all text-center"
       >
-        Ver nuestros juegos 🎲
+        {t('nav.cta')}
       </a>
     </div>
   </div>
