@@ -1,13 +1,13 @@
 [
   {
     "id": "halloween",
-    "name": "Halloween Lotería",
+    "name": "Halloween Bingo",
     "price": 15,
     "currency": "USD"
   },
   {
     "id": "christmas",
-    "name": "Christmas Lotería",
+    "name": "Christmas Bingo",
     "price": 15,
     "currency": "USD"
   }
