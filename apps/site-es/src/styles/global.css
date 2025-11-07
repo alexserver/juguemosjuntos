@@ -11,13 +11,11 @@
   --color-halloween-green: #4ade80;
   --color-halloween-black: #1a1a1a;
   --color-halloween-dark: #2d1b4e;
-
-  /* Night theme colors for dark Halloween page */
-  --color-night-dark: #0a0118;
-  --color-night-purple: #1a0b2e;
-  --color-night-blue: #16213e;
-  --color-moon-cream: #fef5e7;
-  --color-moon-glow: #fff8dc;
+  --color-halloween-night-dark: #0a0118;
+  --color-halloween-night-purple: #1a0b2e;
+  --color-halloween-night-blue: #16213e;
+  --color-halloween-moon-cream: #fef5e7;
+  --color-halloween-moon-glow: #fff8dc;
   --color-halloween-orange-bright: #ff8c42;
 
   /* Christmas theme colors */

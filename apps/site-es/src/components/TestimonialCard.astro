@@ -11,7 +11,7 @@ const { quote, author, quoteClass = "", variant = "light" } = Astro.props;
 
 const cardClasses =
   variant === "dark"
-    ? "bg-night-purple/70 border border-halloween-orange-bright/20"
+    ? "bg-halloween-night-purple/70 border border-halloween-orange-bright/20"
     : variant === "christmas"
       ? "bg-christmas-red border-2 border-christmas-gold/40"
       : "bg-white";
@@ -25,7 +25,7 @@ const quoteMarkColor =
 
 const defaultQuoteColor =
   variant === "dark"
-    ? "text-moon-cream"
+    ? "text-halloween-moon-cream"
     : variant === "christmas"
       ? "text-christmas-cream"
       : "text-gray-700";
