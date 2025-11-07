@@ -17,6 +17,13 @@
   --color-halloween-moon-cream: #fef5e7;
   --color-halloween-moon-glow: #fff8dc;
   --color-halloween-orange-bright: #ff8c42;
+  /* Purple shades for section backgrounds */
+  --color-halloween-purple-deepest: #0f0520;
+  --color-halloween-purple-darker: #1a0d35;
+  --color-halloween-purple-dark: #261447;
+  --color-halloween-purple-medium: #321b5a;
+  --color-halloween-purple-light: #3d2266;
+  --color-halloween-purple-extra-light: #7c4dbd;
 
   /* Christmas theme colors */
   --color-christmas-red: #c41e3a;
