@@ -1,0 +1,345 @@
+---
+import loteriaLogo from "../assets/images/logos/loteria-halloween-logo.png";
+import Button from "../components/Button.astro";
+import FeatureList from "../components/FeatureList.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import TestimonialCard from "../components/TestimonialCard.astro";
+import ValueCard from "../components/ValueCard.astro";
+import Layout from "../layouts/Layout.astro";
+
+// Character images
+import char01 from "../assets/images/halloween/characters/01.png";
+import char02 from "../assets/images/halloween/characters/02.png";
+import char03 from "../assets/images/halloween/characters/03.png";
+import char04 from "../assets/images/halloween/characters/04.png";
+import char05 from "../assets/images/halloween/characters/05.png";
+import char06 from "../assets/images/halloween/characters/06.png";
+import char07 from "../assets/images/halloween/characters/07.png";
+import char08 from "../assets/images/halloween/characters/08.png";
+import char09 from "../assets/images/halloween/characters/09.png";
+
+// Value card images
+import arteImg from "../assets/images/halloween/misc/arte.png";
+import disenioImg from "../assets/images/halloween/misc/disenio.png";
+import diversionImg from "../assets/images/halloween/misc/diversion.png";
+import memoriaImg from "../assets/images/halloween/misc/memoria.png";
+
+// Character data
+import charactersData from "../data/characters.json";
+
+// Product data
+import productsData from "../data/products.json";
+
+const characterImages = [
+  char01,
+  char02,
+  char03,
+  char04,
+  char05,
+  char06,
+  char07,
+  char08,
+  char09,
+];
+
+const characters = charactersData.halloween.map((charData, index) => ({
+  ...charData,
+  image: characterImages[index],
+}));
+
+// Product data
+const halloweenProduct = productsData.find((p) => p.id === "halloween");
+const formattedPrice = `$${halloweenProduct?.price} ${halloweenProduct?.currency}`;
+
+// WhatsApp configuration
+const whatsappNumber = import.meta.env.PUBLIC_WHATSAPP_NUMBER;
+const whatsappMessage = import.meta.env.PUBLIC_WHATSAPP_MESSAGE_HALLOWEEN;
+const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+---
+
+<Layout title="Halloween Lotería - Juguemos Juntos">
+  <Header />
+
+  <main>
+    <!-- Hero Section -->
+    <section
+      class="bg-linear-to-br from-night-dark via-night-purple to-night-blue py-20 md:py-32"
+    >
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <!-- Product Image -->
+            <div class="flex justify-center">
+              <img
+                src={loteriaLogo.src}
+                alt="Halloween Lotería"
+                class="w-full max-w-md"
+              />
+            </div>
+
+            <!-- Hero Content -->
+            <div class="text-center md:text-left">
+              <h1
+                class="text-4xl md:text-6xl font-bold text-halloween-orange-bright mb-6"
+              >
+                Halloween Lotería! 👻
+              </h1>
+              <p class="text-xl md:text-2xl text-moon-cream mb-8">
+                A magical and fun version of the classic Mexican game.
+                Digital PDF ready to print at home - instant download!
+              </p>
+              <div class="text-center md:text-left mb-4">
+                <span class="text-4xl md:text-5xl font-bold text-moon-cream">
+                  {formattedPrice}
+                </span>
+                <span class="text-lg text-moon-cream/80 ml-2">Digital PDF</span>
+              </div>
+              <Button variant="halloween" href={whatsappLink} target="_blank">
+                Get Digital Version
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What's Included Section -->
+    <section class="py-20 bg-night-dark">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto">
+          <h2
+            class="text-3xl md:text-5xl font-bold text-moon-glow mb-12 text-center"
+          >
+            What's included in Halloween Lotería?
+          </h2>
+          <div class="space-y-6">
+            <FeatureList
+              icon="🎭"
+              text="24 unique characters (little witch, vampire, mummy, ghost, etc.)"
+              textClass="text-moon-cream"
+            />
+            <FeatureList
+              icon="📋"
+              text="12 game boards ready to print"
+              textClass="text-moon-cream"
+            />
+            <FeatureList
+              icon="📄"
+              text="High-quality PDF files - print at home or at your local print shop"
+              textClass="text-moon-cream"
+            />
+            <FeatureList
+              icon="⚡"
+              text="Instant download after purchase"
+              textClass="text-moon-cream"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why You'll Love It Section -->
+    <section class="py-20 bg-indigo-950">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-3xl md:text-5xl font-bold text-halloween-orange-bright mb-12 text-center"
+        >
+          Why you'll love it
+        </h2>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto"
+        >
+          <ValueCard
+            image={diversionImg}
+            title="Family fun"
+            description="Perfect for sharing special moments together."
+            variant="dark"
+          />
+          <ValueCard
+            image={disenioImg}
+            title="Cute designs"
+            description="Not scary, designed for all ages."
+            variant="dark"
+          />
+          <ValueCard
+            image={arteImg}
+            title="Exclusive art"
+            description="Colorful and original illustrations."
+            variant="dark"
+          />
+          <ValueCard
+            image={memoriaImg}
+            title="Educational"
+            description="Stimulates memory and vocabulary in children."
+            variant="dark"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Character Gallery Section -->
+    <section class="py-20 bg-linear-to-b from-night-blue/80 to-night-dark">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-3xl md:text-5xl font-bold text-moon-glow mb-6 text-center"
+        >
+          Meet the characters
+        </h2>
+        <p class="text-center text-moon-cream mb-12 max-w-2xl mx-auto">
+          Each character was designed with love and color so kids can
+          learn while they play.
+        </p>
+
+        <!-- Character cards -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto"
+        >
+          {
+            characters.map((character) => (
+              <div class="aspect-square rounded-2xl overflow-hidden shadow-lg shadow-halloween-orange-bright/20 hover:shadow-2xl hover:shadow-halloween-orange-bright/40 transition-all duration-300 hover:scale-105 border-2 border-halloween-orange-bright/20 flex flex-col">
+                <div class="flex-1 overflow-hidden">
+                  <img
+                    src={character.image.src}
+                    alt={character.name.en}
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div class="bg-moon-cream text-gray-800 py-3 px-4 text-center font-semibold">
+                  {character.name.en}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- How to Play Section -->
+    <section
+      class="py-20 bg-linear-to-br from-night-dark via-night-purple to-night-blue text-white"
+    >
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-3xl md:text-5xl font-bold mb-12 text-center text-halloween-orange-bright"
+        >
+          How to play
+        </h2>
+        <div class="max-w-3xl mx-auto space-y-8">
+          <div class="flex items-start gap-4">
+            <div
+              class="shrink-0 w-12 h-12 bg-brand-orange text-white rounded-full flex items-center justify-center text-xl font-bold"
+            >
+              1
+            </div>
+            <p class="text-lg pt-2">
+              Print the PDF file and carefully cut out all the game boards and character cards.
+            </p>
+          </div>
+          <div class="flex items-start gap-4">
+            <div
+              class="shrink-0 w-12 h-12 bg-brand-orange text-white rounded-full flex items-center justify-center text-xl font-bold"
+            >
+              2
+            </div>
+            <p class="text-lg pt-2">Deal the boards among the players.</p>
+          </div>
+          <div class="flex items-start gap-4">
+            <div
+              class="shrink-0 w-12 h-12 bg-brand-orange text-white rounded-full flex items-center justify-center text-xl font-bold"
+            >
+              3
+            </div>
+            <p class="text-lg pt-2">
+              One player calls out the cards in traditional style: "The Little Witch!"
+            </p>
+          </div>
+          <div class="flex items-start gap-4">
+            <div
+              class="shrink-0 w-12 h-12 bg-brand-orange text-white rounded-full flex items-center justify-center text-xl font-bold"
+            >
+              4
+            </div>
+            <p class="text-lg pt-2">
+              Place a bean or pebble on your board if you have the character
+              that's announced
+            </p>
+          </div>
+          <div class="flex items-start gap-4">
+            <div
+              class="shrink-0 w-12 h-12 bg-brand-orange text-white rounded-full flex items-center justify-center text-xl font-bold"
+            >
+              5
+            </div>
+            <p class="text-lg pt-2">
+              Whoever completes a line horizontally or vertically, or fills
+              their board wins!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-linear-to-br from-night-purple/70 to-night-dark">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-3xl md:text-5xl font-bold text-moon-glow mb-12 text-center"
+        >
+          What families say
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <TestimonialCard
+            quote="My kids loved it, they laughed so much with the characters."
+            author="María"
+            variant="dark"
+          />
+          <TestimonialCard
+            quote="An adorable version of the classic, ideal for Halloween."
+            author="Carlos"
+            variant="dark"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section
+      id="buy"
+      class="py-20 bg-linear-to-br from-night-dark via-night-purple to-brand-orange/20"
+    >
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <div
+            class="bg-night-purple/80 rounded-3xl p-12 shadow-2xl border-2 border-halloween-orange-bright/50"
+          >
+            <h2
+              class="text-3xl md:text-5xl font-bold text-halloween-orange-bright mb-6"
+            >
+              🎃 Get it now and experience the magic of Halloween with your family!
+            </h2>
+            <p class="text-xl text-moon-cream mb-8">
+              Digital PDF version - Download instantly and print at home!
+            </p>
+            <div class="text-center mb-6">
+              <span class="text-5xl md:text-6xl font-bold text-halloween-orange-bright">
+                {formattedPrice}
+              </span>
+              <span class="text-xl text-moon-cream/80 ml-2">Digital PDF</span>
+            </div>
+            <Button
+              variant="halloween"
+              class="text-xl px-8 py-4"
+              href={whatsappLink}
+              target="_blank"
+            >
+              Get Digital Version
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Footer />
+  </main>
+</Layout>

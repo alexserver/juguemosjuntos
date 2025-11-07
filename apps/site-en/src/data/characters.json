@@ -1,0 +1,24 @@
+{
+  "halloween": [
+    { "id": 1, "name": "The Little Witch", "filename": "01.png" },
+    { "id": 2, "name": "The Ghost", "filename": "02.png" },
+    { "id": 3, "name": "The Vampire", "filename": "03.png" },
+    { "id": 4, "name": "The Mummy", "filename": "04.png" },
+    { "id": 5, "name": "The Werewolf", "filename": "05.png" },
+    { "id": 6, "name": "The Skeleton", "filename": "06.png" },
+    { "id": 7, "name": "The Pumpkin", "filename": "07.png" },
+    { "id": 8, "name": "The Bat", "filename": "08.png" },
+    { "id": 9, "name": "The Zombie", "filename": "09.png" }
+  ],
+  "christmas": [
+    { "id": 1, "name": "Santa Claus", "filename": "01.png" },
+    { "id": 2, "name": "Mrs. Claus", "filename": "02.png" },
+    { "id": 3, "name": "Rudolph the Reindeer", "filename": "03.png" },
+    { "id": 4, "name": "The Elf", "filename": "04.png" },
+    { "id": 5, "name": "The Presents", "filename": "05.png" },
+    { "id": 6, "name": "The Little Star", "filename": "06.png" },
+    { "id": 7, "name": "The Christmas Tree", "filename": "07.png" },
+    { "id": 8, "name": "The Snowflake", "filename": "08.png" },
+    { "id": 9, "name": "The Snowman", "filename": "09.png" }
+  ]
+}

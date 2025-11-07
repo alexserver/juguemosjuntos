@@ -1,0 +1,322 @@
+---
+import loteriaLogo from "../assets/images/logos/loteria-christmas-logo.png";
+import Button from "../components/Button.astro";
+import FeatureList from "../components/FeatureList.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import TestimonialCard from "../components/TestimonialCard.astro";
+import ValueCard from "../components/ValueCard.astro";
+import Layout from "../layouts/Layout.astro";
+
+// Character images
+import char01 from "../assets/images/christmas/characters/01.png";
+import char02 from "../assets/images/christmas/characters/02.png";
+import char03 from "../assets/images/christmas/characters/03.png";
+import char04 from "../assets/images/christmas/characters/04.png";
+import char05 from "../assets/images/christmas/characters/05.png";
+import char06 from "../assets/images/christmas/characters/06.png";
+import char07 from "../assets/images/christmas/characters/07.png";
+import char08 from "../assets/images/christmas/characters/08.png";
+import char09 from "../assets/images/christmas/characters/09.png";
+
+// Value card images
+import arteImg from "../assets/images/christmas/misc/arte.png";
+import disenioImg from "../assets/images/christmas/misc/disenio.png";
+import diversionImg from "../assets/images/christmas/misc/diversion.png";
+import memoriaImg from "../assets/images/christmas/misc/memoria.png";
+
+// Character data
+import charactersData from "../data/characters.json";
+
+// Product data
+import productsData from "../data/products.json";
+
+const characterImages = [
+  char01,
+  char02,
+  char03,
+  char04,
+  char05,
+  char06,
+  char07,
+  char08,
+  char09,
+];
+
+const characters = charactersData.christmas.map((charData, index) => ({
+  ...charData,
+  image: characterImages[index],
+}));
+
+// Product data
+const christmasProduct = productsData.find((p) => p.id === "christmas");
+const formattedPrice = `$${christmasProduct?.price} ${christmasProduct?.currency}`;
+
+// WhatsApp configuration
+const whatsappNumber = import.meta.env.PUBLIC_WHATSAPP_NUMBER;
+const whatsappMessage = import.meta.env.PUBLIC_WHATSAPP_MESSAGE_CHRISTMAS;
+const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+---
+
+<Layout title="Lotería de Navidad - Juguemos Juntos">
+  <Header />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-christmas-warm-cream py-20 md:py-32">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <!-- Product Image -->
+            <div class="flex justify-center">
+              <img
+                src={loteriaLogo.src}
+                alt="Lotería de Navidad"
+                class="w-full max-w-md"
+              />
+            </div>
+
+            <!-- Hero Content -->
+            <div class="text-center md:text-left">
+              <h1
+                class="text-4xl md:text-6xl font-bold text-christmas-red mb-6"
+              >
+                ¡Lotería de Navidad! 🎄
+              </h1>
+              <p class="text-xl md:text-2xl text-gray-700 mb-8">
+                Una versión festiva y mágica del clásico juego mexicano.
+                Perfecta para celebrar en familia durante las fiestas.
+              </p>
+              <div class="text-center md:text-left mb-4">
+                <span class="text-4xl md:text-5xl font-bold text-christmas-red">
+                  {formattedPrice}
+                </span>
+                <span class="text-lg text-gray-600 ml-2">+ envío</span>
+              </div>
+              <Button variant="christmas" href={whatsappLink} target="_blank">
+                Cómprala ahora
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Qué Incluye Section -->
+    <section class="py-20 bg-christmas-red">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto">
+          <h2
+            class="text-3xl md:text-5xl font-bold text-christmas-snow mb-12 text-center"
+          >
+            ¿Qué incluye la Lotería de Navidad?
+          </h2>
+          <div class="space-y-6">
+            <FeatureList
+              icon="🎅"
+              text="24 personajes únicos navideños (Santa, reno, muñeco de nieve, etc.)"
+              textClass="text-christmas-snow"
+            />
+            <FeatureList
+              icon="📋"
+              text="12 cartillas de juego"
+              textClass="text-christmas-snow"
+            />
+            <FeatureList
+              icon="🌱"
+              text="Versión impresa y ecológica"
+              textClass="text-christmas-snow"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Por Qué Te Encantará Section -->
+    <section class="py-20 bg-christmas-green">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-3xl md:text-5xl font-bold text-christmas-light-gold mb-12 text-center"
+        >
+          ¿Por qué te encantará?
+        </h2>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto"
+        >
+          <ValueCard
+            image={diversionImg}
+            title="Diversión en familia"
+            description="Perfecto para compartir momentos especiales juntos."
+            variant="christmas"
+          />
+          <ValueCard
+            image={disenioImg}
+            title="Diseños festivos"
+            description="Personajes navideños encantadores para todas las edades."
+            variant="christmas"
+          />
+          <ValueCard
+            image={arteImg}
+            title="Arte exclusivo"
+            description="Ilustraciones coloridas y originales."
+            variant="christmas"
+          />
+          <ValueCard
+            image={memoriaImg}
+            title="Educativo"
+            description="Estimula memoria y vocabulario en niños."
+            variant="christmas"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Galería de Cartas Section -->
+    <section class="py-20 bg-christmas-red">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-3xl md:text-5xl font-bold text-christmas-light-gold mb-6 text-center"
+        >
+          Conoce a los personajes
+        </h2>
+        <p class="text-center text-christmas-cream mb-12 max-w-2xl mx-auto">
+          Cada personaje fue diseñado con amor y color para que los niños
+          aprendan mientras celebran la Navidad.
+        </p>
+
+        <!-- Character cards -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto"
+        >
+          {
+            characters.map((character) => (
+              <div class="aspect-square rounded-2xl overflow-hidden shadow-lg shadow-christmas-gold/20 hover:shadow-2xl hover:shadow-christmas-gold/40 transition-all duration-300 hover:scale-105 border-2 border-christmas-gold/20 flex flex-col">
+                <div class="flex-1 overflow-hidden">
+                  <img
+                    src={character.image.src}
+                    alt={character.name.es}
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div class="bg-christmas-cream text-gray-800 py-3 px-4 text-center font-semibold">
+                  {character.name.es}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Cómo Jugar Section -->
+    <section class="py-20 bg-christmas-pine text-white">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-3xl md:text-5xl font-bold mb-12 text-center text-christmas-gold"
+        >
+          Cómo jugar
+        </h2>
+        <div class="max-w-3xl mx-auto space-y-8">
+          <div class="flex items-start gap-4">
+            <div
+              class="shrink-0 w-12 h-12 bg-christmas-red text-white rounded-full flex items-center justify-center text-xl font-bold"
+            >
+              1
+            </div>
+            <p class="text-lg pt-2">Reparte las tablas entre los jugadores.</p>
+          </div>
+          <div class="flex items-start gap-4">
+            <div
+              class="shrink-0 w-12 h-12 bg-christmas-red text-white rounded-full flex items-center justify-center text-xl font-bold"
+            >
+              2
+            </div>
+            <p class="text-lg pt-2">
+              Un jugador canta las cartas al estilo tradicional: "¡Eeeeel Santa
+              Claus!"
+            </p>
+          </div>
+          <div class="flex items-start gap-4">
+            <div
+              class="shrink-0 w-12 h-12 bg-christmas-red text-white rounded-full flex items-center justify-center text-xl font-bold"
+            >
+              3
+            </div>
+            <p class="text-lg pt-2">
+              Pon un frijolito o piedrita en tu cartilla si tienes el personaje
+              que anuncian
+            </p>
+          </div>
+          <div class="flex items-start gap-4">
+            <div
+              class="shrink-0 w-12 h-12 bg-christmas-red text-white rounded-full flex items-center justify-center text-xl font-bold"
+            >
+              4
+            </div>
+            <p class="text-lg pt-2">
+              ¡Gana quien complete una línea en horizontal o vertical, o quien
+              llene su cartilla!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonios Section -->
+    <section class="py-20 bg-christmas-warm-cream">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-3xl md:text-5xl font-bold text-christmas-red mb-12 text-center"
+        >
+          Lo que dicen las familias
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <TestimonialCard
+            quote="Perfecta para nuestra celebración navideña, a los niños les encantó."
+            author="María"
+            variant="christmas"
+          />
+          <TestimonialCard
+            quote="Un regalo ideal para compartir en familia durante las fiestas."
+            author="Carlos"
+            variant="christmas"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Final Section -->
+    <section id="comprar" class="py-20 bg-christmas-green">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <div
+            class="bg-christmas-dark-red rounded-3xl p-12 shadow-2xl border-2 border-christmas-gold"
+          >
+            <h2 class="text-3xl md:text-5xl font-bold text-christmas-gold mb-6">
+              🎄 ¡Consíguela ahora y celebra la Navidad en familia!
+            </h2>
+            <p class="text-xl text-christmas-cream mb-8">
+              Por ahora solo vendemos versiones impresas. ¡Haz tu pedido hoy!
+            </p>
+            <div class="text-center mb-6">
+              <span class="text-5xl md:text-6xl font-bold text-christmas-gold">
+                {formattedPrice}
+              </span>
+              <span class="text-xl text-christmas-cream/80 ml-2">+ envío</span>
+            </div>
+            <Button
+              variant="christmas"
+              class="text-xl px-8 py-4"
+              href={whatsappLink}
+              target="_blank"
+            >
+              Comprar ahora
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Footer />
+  </main>
+</Layout>

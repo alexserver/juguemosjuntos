@@ -1,0 +1,24 @@
+{
+  "halloween": [
+    { "id": 1, "name": "La Brujita", "filename": "01.png" },
+    { "id": 2, "name": "El Fantasma", "filename": "02.png" },
+    { "id": 3, "name": "El Vampiro", "filename": "03.png" },
+    { "id": 4, "name": "La Momia", "filename": "04.png" },
+    { "id": 5, "name": "El Lobo", "filename": "05.png" },
+    { "id": 6, "name": "El Esqueleto", "filename": "06.png" },
+    { "id": 7, "name": "La Calabaza", "filename": "07.png" },
+    { "id": 8, "name": "El Murciélago", "filename": "08.png" },
+    { "id": 9, "name": "El Zombie", "filename": "09.png" }
+  ],
+  "christmas": [
+    { "id": 1, "name": "Santa Claus", "filename": "01.png" },
+    { "id": 2, "name": "Sra. Claus", "filename": "02.png" },
+    { "id": 3, "name": "Rodolfo el Reno", "filename": "03.png" },
+    { "id": 4, "name": "El Duende", "filename": "04.png" },
+    { "id": 5, "name": "Los Regalos", "filename": "05.png" },
+    { "id": 6, "name": "La Estrellita", "filename": "06.png" },
+    { "id": 7, "name": "El Arbolito de Navidad", "filename": "07.png" },
+    { "id": 8, "name": "El Copo de Nieve", "filename": "08.png" },
+    { "id": 9, "name": "El Muñeco de Nieve", "filename": "09.png" }
+  ]
+}

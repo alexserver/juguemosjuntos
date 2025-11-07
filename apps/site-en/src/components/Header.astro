@@ -1,0 +1,94 @@
+---
+// Header component with navigation
+import logo from "../assets/images/logos/juguemos-juntos-logo.png";
+---
+
+<header class="sticky top-0 z-50 bg-white shadow-md">
+  <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+    <!-- Logo -->
+    <div class="flex items-center">
+      <a href="/" class="flex items-center hover:opacity-80 transition-opacity">
+        <img src={logo.src} alt="Juguemos Juntos" class="h-12 md:h-16" />
+      </a>
+    </div>
+
+    <!-- Desktop Navigation -->
+    <div class="hidden md:flex items-center space-x-6">
+      <a href="/#home" class="text-gray-700 hover:text-brand-purple transition-colors font-semibold">
+        Home
+      </a>
+      <a href="/#about" class="text-gray-700 hover:text-brand-purple transition-colors font-semibold">
+        About Us
+      </a>
+      <a href="/#games" class="text-gray-700 hover:text-brand-purple transition-colors font-semibold">
+        Games
+      </a>
+      <a href="/#contact" class="hidden text-gray-700 hover:text-brand-purple transition-colors font-semibold">
+        Contact
+      </a>
+    </div>
+
+    <!-- CTA Button and Mobile Menu -->
+    <div class="hidden md:flex items-center gap-4">
+      <a
+        href="/#games"
+        class="px-6 py-3 bg-brand-purple text-white font-bold rounded-3xl hover:brightness-110 transition-all shadow-lg"
+      >
+        View Games
+      </a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button
+      id="mobile-menu-button"
+      class="md:hidden p-2 text-gray-700 hover:text-brand-purple transition-colors"
+      aria-label="Toggle menu"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+    <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
+      <a href="/#home" class="text-gray-700 hover:text-brand-purple transition-colors font-semibold">
+        Home
+      </a>
+      <a href="/#about" class="text-gray-700 hover:text-brand-purple transition-colors font-semibold">
+        About Us
+      </a>
+      <a href="/#games" class="text-gray-700 hover:text-brand-purple transition-colors font-semibold">
+        Games
+      </a>
+      <a href="/#contact" class="hidden text-gray-700 hover:text-brand-purple transition-colors font-semibold">
+        Contact
+      </a>
+      <a
+        href="/#games"
+        class="px-6 py-3 bg-brand-purple text-white font-bold rounded-3xl hover:brightness-110 transition-all text-center"
+      >
+        View Games
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Mobile menu toggle
+  const menuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuButton?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+
+  // Close mobile menu when clicking a link
+  const mobileLinks = mobileMenu?.querySelectorAll('a');
+  mobileLinks?.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+    });
+  });
+</script>

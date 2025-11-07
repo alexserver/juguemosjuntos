@@ -1,0 +1,14 @@
+[
+  {
+    "id": "halloween",
+    "name": "Halloween Lotería",
+    "price": 15,
+    "currency": "USD"
+  },
+  {
+    "id": "christmas",
+    "name": "Christmas Lotería",
+    "price": 15,
+    "currency": "USD"
+  }
+]

@@ -1,0 +1,16 @@
+---
+// Numbered step card for "Cómo jugar" instructions
+interface Props {
+  number: number;
+  text: string;
+}
+
+const { number, text } = Astro.props;
+---
+
+<div class="flex items-start gap-4">
+  <div class="flex-shrink-0 w-12 h-12 bg-brand-orange text-white rounded-full flex items-center justify-center text-xl font-bold">
+    {number}
+  </div>
+  <p class="text-lg text-gray-700 pt-2">{text}</p>
+</div>
