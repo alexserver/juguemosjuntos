@@ -7,9 +7,9 @@ interface Props {
   image?: ImageMetadata;
   title: string;
   description: string;
+  cardClass?: string;
   titleClass?: string;
   descriptionClass?: string;
-  variant?: "light" | "dark" | "christmas";
 }
 
 const {
@@ -17,36 +17,15 @@ const {
   image,
   title,
   description,
-  titleClass = "",
-  descriptionClass = "",
-  variant = "light",
+  cardClass = "bg-white",
+  titleClass = "text-gray-900",
+  descriptionClass = "text-gray-600",
 } = Astro.props;
-
-const cardClasses =
-  variant === "dark"
-    ? "bg-violet-800"
-    : variant === "christmas"
-      ? "bg-christmas-red border-2 border-christmas-gold/30"
-      : "bg-white";
-
-const defaultTitleColor =
-  variant === "dark"
-    ? "text-halloween-moon-glow"
-    : variant === "christmas"
-      ? "text-christmas-light-gold"
-      : "text-brand-purple";
-
-const defaultDescriptionColor =
-  variant === "dark"
-    ? "text-halloween-moon-cream"
-    : variant === "christmas"
-      ? "text-christmas-cream"
-      : "text-gray-600";
 ---
 
 <div
   class:list={[
-    cardClasses,
+    cardClass,
     "rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1",
   ]}
 >
@@ -63,8 +42,8 @@ const defaultDescriptionColor =
       <div class="text-5xl mb-4">{icon}</div>
     )
   }
-  <h3 class:list={["text-xl font-bold mb-2", defaultTitleColor, titleClass]}>
+  <h3 class:list={["text-xl font-bold mb-2", titleClass]}>
     {title}
   </h3>
-  <p class:list={[defaultDescriptionColor, descriptionClass]}>{description}</p>
+  <p class:list={[descriptionClass]}>{description}</p>
 </div>
