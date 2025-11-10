@@ -1,0 +1,332 @@
+---
+import loteriaLogo from "../assets/images/logos/zoo-bingo-logo.png";
+import Button from "../components/Button.astro";
+import FeatureList from "../components/FeatureList.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import TestimonialCard from "../components/TestimonialCard.astro";
+import ValueCard from "../components/ValueCard.astro";
+import Layout from "../layouts/Layout.astro";
+
+// Character images
+import char01 from "../assets/images/zoo/characters/01.png";
+import char02 from "../assets/images/zoo/characters/02.png";
+import char03 from "../assets/images/zoo/characters/03.png";
+import char04 from "../assets/images/zoo/characters/04.png";
+import char05 from "../assets/images/zoo/characters/05.png";
+import char06 from "../assets/images/zoo/characters/06.png";
+import char07 from "../assets/images/zoo/characters/07.png";
+import char08 from "../assets/images/zoo/characters/08.png";
+import char09 from "../assets/images/zoo/characters/09.png";
+
+// Value card images
+import arteImg from "../assets/images/zoo/misc/arte.png";
+import disenioImg from "../assets/images/zoo/misc/disenio.png";
+import diversionImg from "../assets/images/zoo/misc/diversion.png";
+import memoriaImg from "../assets/images/zoo/misc/memoria.png";
+
+// Character data
+import charactersData from "../data/characters.json";
+
+// Product data
+import productsData from "../data/products.json";
+
+const characterImages = [
+  char01,
+  char02,
+  char03,
+  char04,
+  char05,
+  char06,
+  char07,
+  char08,
+  char09,
+];
+
+const characters = charactersData.zoo.map((charData, index) => ({
+  ...charData,
+  image: characterImages[index],
+}));
+
+// Product data
+const zooProduct = productsData.find((p) => p.id === "zoo");
+const formattedPrice = `$${zooProduct?.price} ${zooProduct?.currency}`;
+
+// WhatsApp configuration
+const whatsappNumber = import.meta.env.PUBLIC_WHATSAPP_NUMBER;
+const whatsappMessage = import.meta.env.PUBLIC_WHATSAPP_MESSAGE_ZOO;
+const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+---
+
+<Layout title="Lotería del Zoológico - Juguemos Juntos">
+  <Header />
+
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-zoo-cream py-20 md:py-32">
+      <div class="container mx-auto px-4">
+        <div class="max-w-5xl mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <!-- Product Image -->
+            <div class="flex justify-center">
+              <img
+                src={loteriaLogo.src}
+                alt="Lotería del Zoológico"
+                class="w-full max-w-md"
+              />
+            </div>
+
+            <!-- Hero Content -->
+            <div class="text-center md:text-left">
+              <h1
+                class="text-4xl md:text-6xl font-bold text-zoo-purple-dark mb-6"
+              >
+                ¡Lotería del Zoológico! 🦁
+              </h1>
+              <p class="text-xl md:text-2xl text-gray-800 mb-8">
+                Una versión mágica y divertida del clásico juego mexicano.
+                Perfecta para niños y fiestas familiares.
+              </p>
+              <div class="text-center md:text-left mb-4">
+                <span
+                  class="text-4xl md:text-5xl font-bold text-zoo-orange-dark"
+                >
+                  {formattedPrice}
+                </span>
+                <span class="text-lg text-gray-700 ml-2">+ envío</span>
+              </div>
+              <Button variant="zoo" href={whatsappLink} target="_blank">
+                Cómprala ahora
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Qué Incluye Section -->
+    <section class="py-20 bg-zoo-purple-dark">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto">
+          <h2
+            class="text-3xl md:text-5xl font-bold text-zoo-orange-bright mb-12 text-center"
+          >
+            ¿Qué incluye la Lotería del Zoológico?
+          </h2>
+          <div class="space-y-6">
+            <FeatureList
+              icon="🦁"
+              text="24 personajes únicos de animales del zoológico"
+              textClass="text-zoo-cream"
+            />
+            <FeatureList
+              icon="📋"
+              text="12 cartillas de juego"
+              textClass="text-zoo-cream"
+            />
+            <FeatureList
+              icon="🌱"
+              text="Versión impresa y ecológica"
+              textClass="text-zoo-cream"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Por Qué Te Encantará Section -->
+    <section class="py-20 bg-gradient-to-b from-zoo-purple to-zoo-purple-dark">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-3xl md:text-5xl font-bold text-zoo-orange-bright mb-12 text-center"
+        >
+          ¿Por qué te encantará?
+        </h2>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto"
+        >
+          <ValueCard
+            image={diversionImg}
+            title="Diversión en familia"
+            description="Perfecto para compartir momentos especiales juntos."
+            variant="dark"
+          />
+          <ValueCard
+            image={disenioImg}
+            title="Diseños adorables"
+            description="Animales tiernos diseñados para todas las edades."
+            variant="dark"
+          />
+          <ValueCard
+            image={arteImg}
+            title="Arte exclusivo"
+            description="Ilustraciones coloridas y originales."
+            variant="dark"
+          />
+          <ValueCard
+            image={memoriaImg}
+            title="Educativo"
+            description="Aprende sobre animales mientras juegas."
+            variant="dark"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Galería de Cartas Section -->
+    <section class="py-20 bg-gradient-to-b from-zoo-green to-zoo-green-dark">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-3xl md:text-5xl font-bold text-zoo-purple mb-6 text-center"
+        >
+          Conoce a los personajes
+        </h2>
+        <p class="text-center text-zoo-cream mb-12 max-w-2xl mx-auto">
+          Cada personaje fue diseñado con amor y color para que los niños
+          aprendan sobre animales mientras juegan.
+        </p>
+
+        <!-- Character cards -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto"
+        >
+          {
+            characters.map((character) => (
+              <div class="aspect-square rounded-2xl overflow-hidden shadow-lg shadow-zoo-orange-bright/20 hover:shadow-2xl hover:shadow-zoo-orange-bright/40 transition-all duration-300 hover:scale-105 border-2 border-zoo-orange-bright/20 flex flex-col">
+                <div class="flex-1 overflow-hidden">
+                  <img
+                    src={character.image.src}
+                    alt={character.name}
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <div class="bg-zoo-cream text-gray-800 py-3 px-4 text-center font-semibold">
+                  {character.name}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Cómo Jugar Section -->
+    <section
+      class="py-20 bg-gradient-to-b from-zoo-orange to-zoo-orange-dark text-white"
+    >
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-3xl md:text-5xl font-bold mb-12 text-center text-zoo-purple"
+        >
+          Cómo jugar
+        </h2>
+        <div class="max-w-3xl mx-auto space-y-8">
+          <div class="flex items-start gap-4">
+            <div
+              class="shrink-0 w-12 h-12 bg-zoo-orange text-white rounded-full flex items-center justify-center text-xl font-bold"
+            >
+              1
+            </div>
+            <p class="text-lg pt-2">Reparte las tablas entre los jugadores.</p>
+          </div>
+          <div class="flex items-start gap-4">
+            <div
+              class="shrink-0 w-12 h-12 bg-zoo-orange text-white rounded-full flex items-center justify-center text-xl font-bold"
+            >
+              2
+            </div>
+            <p class="text-lg pt-2">
+              Un jugador canta las cartas al estilo tradicional: "¡El Leóóón!"
+            </p>
+          </div>
+          <div class="flex items-start gap-4">
+            <div
+              class="shrink-0 w-12 h-12 bg-zoo-orange text-white rounded-full flex items-center justify-center text-xl font-bold"
+            >
+              3
+            </div>
+            <p class="text-lg pt-2">
+              Pon un frijolito o piedrita en tu cartilla si tienes el personaje
+              que anuncian
+            </p>
+          </div>
+          <div class="flex items-start gap-4">
+            <div
+              class="shrink-0 w-12 h-12 bg-zoo-orange text-white rounded-full flex items-center justify-center text-xl font-bold"
+            >
+              4
+            </div>
+            <p class="text-lg pt-2">
+              ¡Gana quien complete una línea en horizontal o vertical, o quien
+              llene su cartilla!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonios Section -->
+    <section class="py-20 bg-zoo-purple">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-3xl md:text-5xl font-bold text-zoo-cream mb-12 text-center"
+        >
+          Lo que dicen las familias
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <TestimonialCard
+            quote="A mis hijos les fascinaron los animalitos, aprendieron mucho jugando."
+            author="María"
+            variant="dark"
+          />
+          <TestimonialCard
+            quote="Una manera divertida de enseñar sobre animales del zoológico."
+            author="Carlos"
+            variant="dark"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Final Section -->
+    <section
+      id="comprar"
+      class="py-20 bg-gradient-to-b from-zoo-purple-dark to-zoo-purple"
+    >
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <div
+            class="bg-zoo-purple-dark/90 rounded-3xl p-12 shadow-2xl border-2 border-zoo-orange-bright/50"
+          >
+            <h2
+              class="text-3xl md:text-5xl font-bold text-zoo-orange-bright mb-6"
+            >
+              🦁 ¡Consíguela ahora y descubre el mundo animal en familia!
+            </h2>
+            <p class="text-xl text-zoo-cream mb-8">
+              Por ahora solo vendemos versiones impresas. ¡Haz tu pedido hoy!
+            </p>
+            <div class="text-center mb-6">
+              <span
+                class="text-5xl md:text-6xl font-bold text-zoo-orange-bright"
+              >
+                {formattedPrice}
+              </span>
+              <span class="text-xl text-zoo-cream/80 ml-2">+ envío</span>
+            </div>
+            <Button
+              variant="zoo"
+              class="text-xl px-8 py-4"
+              href={whatsappLink}
+              target="_blank"
+            >
+              Comprar ahora
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Footer />
+  </main>
+</Layout>

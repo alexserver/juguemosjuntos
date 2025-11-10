@@ -20,5 +20,16 @@
     { "id": 7, "name": "The Christmas Tree", "filename": "07.png" },
     { "id": 8, "name": "The Snowflake", "filename": "08.png" },
     { "id": 9, "name": "The Snowman", "filename": "09.png" }
+  ],
+  "zoo": [
+    { "id": 1, "name": "Lion", "filename": "01.png" },
+    { "id": 2, "name": "Zebra", "filename": "02.png" },
+    { "id": 3, "name": "Elephant", "filename": "03.png" },
+    { "id": 4, "name": "Giraffe", "filename": "04.png" },
+    { "id": 5, "name": "Monkey", "filename": "05.png" },
+    { "id": 6, "name": "Tiger", "filename": "06.png" },
+    { "id": 7, "name": "Panda", "filename": "07.png" },
+    { "id": 8, "name": "Penguin", "filename": "08.png" },
+    { "id": 9, "name": "Crocodile", "filename": "09.png" }
   ]
 }

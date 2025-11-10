@@ -38,6 +38,21 @@
   --color-christmas-silver: #c0c0c0;
   --color-christmas-light-gold: #ffd700;
   --color-christmas-berry: #a52a2a;
+
+  /* Zoo theme colors */
+  --color-zoo-orange: #ff8c42;
+  --color-zoo-orange-bright: #ffa45c;
+  --color-zoo-orange-dark: #d97136;
+  --color-zoo-purple: #9b5de5;
+  --color-zoo-purple-light: #c4a3f5;
+  --color-zoo-purple-dark: #6930c3;
+  --color-zoo-green: #51cf66;
+  --color-zoo-green-bright: #69db7c;
+  --color-zoo-green-dark: #37b24d;
+  --color-zoo-cream: #fef8f3;
+  --color-zoo-brown: #8b5a3c;
+  --color-zoo-yellow: #ffd43b;
+
   /* Extended border radius for playful design */
   --radius-xl: 1rem;
   --radius-2xl: 1.5rem;

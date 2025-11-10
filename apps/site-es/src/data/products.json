@@ -10,5 +10,11 @@
     "name": "Lotería de Navidad",
     "price": 120,
     "currency": "MXN"
+  },
+  {
+    "id": "zoo",
+    "name": "Lotería del Zoológico",
+    "price": 120,
+    "currency": "MXN"
   }
 ]

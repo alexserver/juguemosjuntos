@@ -10,5 +10,11 @@
     "name": "Christmas Bingo",
     "price": 15,
     "currency": "USD"
+  },
+  {
+    "id": "zoo",
+    "name": "Zoo Bingo",
+    "price": 15,
+    "currency": "USD"
   }
 ]

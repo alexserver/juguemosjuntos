@@ -20,5 +20,16 @@
     { "id": 7, "name": "El Arbolito de Navidad", "filename": "07.png" },
     { "id": 8, "name": "El Copo de Nieve", "filename": "08.png" },
     { "id": 9, "name": "El Muñeco de Nieve", "filename": "09.png" }
+  ],
+  "zoo": [
+    { "id": 1, "name": "El León", "filename": "01.png" },
+    { "id": 2, "name": "La Cebra", "filename": "02.png" },
+    { "id": 3, "name": "El Elefante", "filename": "03.png" },
+    { "id": 4, "name": "La Jirafa", "filename": "04.png" },
+    { "id": 5, "name": "El Mono", "filename": "05.png" },
+    { "id": 6, "name": "El Tigre", "filename": "06.png" },
+    { "id": 7, "name": "El Panda", "filename": "07.png" },
+    { "id": 8, "name": "El Pingüino", "filename": "08.png" },
+    { "id": 9, "name": "El Cocodrilo", "filename": "09.png" }
   ]
 }
