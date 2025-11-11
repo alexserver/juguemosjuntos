@@ -51,11 +51,7 @@ const characters = charactersData.christmas.map((charData, index) => ({
 // Product data
 const christmasProduct = productsData.find((p) => p.id === "christmas");
 const formattedPrice = `$${christmasProduct?.price} ${christmasProduct?.currency}`;
-
-// WhatsApp configuration
-const whatsappNumber = import.meta.env.PUBLIC_WHATSAPP_NUMBER;
-const whatsappMessage = import.meta.env.PUBLIC_WHATSAPP_MESSAGE_CHRISTMAS;
-const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+const ctaLink = christmasProduct?.cta_link || "#";
 ---
 
 <Layout title="Christmas Bingo - Juguemos Juntos">
@@ -93,7 +89,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
                 </span>
                 <span class="text-lg text-gray-600 ml-2">Digital PDF</span>
               </div>
-              <Button variant="christmas" href={whatsappLink} target="_blank">
+              <Button variant="christmas" href={ctaLink} target="_blank">
                 Get Digital Version
               </Button>
             </div>
@@ -339,7 +335,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
             <Button
               variant="christmas"
               class="text-xl px-8 py-4"
-              href={whatsappLink}
+              href={ctaLink}
               target="_blank"
             >
               Get Digital Version

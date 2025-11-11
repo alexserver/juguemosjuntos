@@ -3,18 +3,21 @@
     "id": "halloween",
     "name": "Halloween Bingo",
     "price": 15,
-    "currency": "USD"
+    "currency": "USD",
+    "cta_link": "https://juguemosjuntos.gumroad.com/l/halloween-bingo"
   },
   {
     "id": "christmas",
     "name": "Christmas Bingo",
     "price": 15,
-    "currency": "USD"
+    "currency": "USD",
+    "cta_link": "https://juguemosjuntos.gumroad.com/l/christmas-bingo"
   },
   {
     "id": "zoo",
     "name": "Zoo Bingo",
     "price": 15,
-    "currency": "USD"
+    "currency": "USD",
+    "cta_link": "https://juguemosjuntos.gumroad.com/l/bingo-at-the-zoo"
   }
 ]

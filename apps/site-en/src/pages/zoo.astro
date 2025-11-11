@@ -51,11 +51,7 @@ const characters = charactersData.zoo.map((charData, index) => ({
 // Product data
 const zooProduct = productsData.find((p) => p.id === "zoo");
 const formattedPrice = `$${zooProduct?.price} ${zooProduct?.currency}`;
-
-// WhatsApp configuration
-const whatsappNumber = import.meta.env.PUBLIC_WHATSAPP_NUMBER;
-const whatsappMessage = import.meta.env.PUBLIC_WHATSAPP_MESSAGE_ZOO;
-const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+const ctaLink = zooProduct?.cta_link || "#";
 ---
 
 <Layout title="Zoo Bingo - Juguemos Juntos">
@@ -94,7 +90,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
                   {formattedPrice}
                 </span>
               </div>
-              <Button variant="zoo" href={whatsappLink} target="_blank">
+              <Button variant="zoo" href={ctaLink} target="_blank">
                 Buy Now
               </Button>
             </div>
@@ -341,7 +337,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
             <Button
               variant="zoo"
               class="text-xl px-8 py-4"
-              href={whatsappLink}
+              href={ctaLink}
               target="_blank"
             >
               Buy Now

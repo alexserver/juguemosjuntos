@@ -51,11 +51,7 @@ const characters = charactersData.halloween.map((charData, index) => ({
 // Product data
 const halloweenProduct = productsData.find((p) => p.id === "halloween");
 const formattedPrice = `$${halloweenProduct?.price} ${halloweenProduct?.currency}`;
-
-// WhatsApp configuration
-const whatsappNumber = import.meta.env.PUBLIC_WHATSAPP_NUMBER;
-const whatsappMessage = import.meta.env.PUBLIC_WHATSAPP_MESSAGE_HALLOWEEN;
-const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+const ctaLink = halloweenProduct?.cta_link || "#";
 ---
 
 <Layout title="Halloween Bingo - Juguemos Juntos">
@@ -97,7 +93,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
                   >Digital PDF</span
                 >
               </div>
-              <Button variant="halloween" href={whatsappLink} target="_blank">
+              <Button variant="halloween" href={ctaLink} target="_blank">
                 Get Digital Version
               </Button>
             </div>
@@ -350,7 +346,7 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
             <Button
               variant="halloween"
               class="text-xl px-8 py-4"
-              href={whatsappLink}
+              href={ctaLink}
               target="_blank"
             >
               Get Digital Version

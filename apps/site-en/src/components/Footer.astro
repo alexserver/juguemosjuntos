@@ -1,6 +1,11 @@
 ---
 // Footer component with links and social media
 import logo from "../assets/images/logos/juguemos-juntos-logo.png";
+
+// WhatsApp support link
+const whatsappNumber = import.meta.env.PUBLIC_WHATSAPP_NUMBER;
+const whatsappSupportMessage = import.meta.env.PUBLIC_WHATSAPP_MESSAGE_SUPPORT;
+const whatsappSupportLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappSupportMessage)}`;
 ---
 
 <footer class="bg-brand-purple text-white py-12">
@@ -60,6 +65,14 @@ import logo from "../assets/images/logos/juguemos-juntos-logo.png";
             class="text-purple-100 hover:text-brand-yellow transition-colors block"
           >
             📧 hola@juguemosjuntos.store
+          </a>
+          <a
+            href={whatsappSupportLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-purple-100 hover:text-brand-yellow transition-colors block"
+          >
+            💬 WhatsApp Support
           </a>
 
           <!-- Social Media Icons -->
