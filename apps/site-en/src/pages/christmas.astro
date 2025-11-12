@@ -25,6 +25,9 @@ import disenioImg from "../assets/images/christmas/misc/disenio.png";
 import diversionImg from "../assets/images/christmas/misc/diversion.png";
 import memoriaImg from "../assets/images/christmas/misc/memoria.png";
 
+// Marketing images
+import marketingImg01 from "../assets/images/christmas/marketing/01.png";
+
 // Character data
 import charactersData from "../data/characters.json";
 
@@ -63,13 +66,27 @@ const ctaLink = christmasProduct?.cta_link || "#";
       <div class="container mx-auto px-4">
         <div class="max-w-5xl mx-auto">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <!-- Product Image -->
+            <!-- Marketing Image -->
             <div class="flex justify-center">
-              <img
-                src={loteriaLogo.src}
-                alt="Christmas Bingo"
-                class="w-full max-w-md"
-              />
+              <div
+                class="relative w-full max-w-md h-64 md:h-120 overflow-hidden rounded-2xl shadow-2xl"
+              >
+                <img
+                  src={marketingImg01.src}
+                  alt="Christmas Bingo"
+                  class="w-full h-full object-cover"
+                />
+                <!-- Logo Badge -->
+                <div
+                  class="absolute top-3 right-3 md:top-4 md:right-4 bg-white/70 rounded-xl p-2 md:p-3 shadow-lg"
+                >
+                  <img
+                    src={loteriaLogo.src}
+                    alt="Christmas Bingo Logo"
+                    class="h-16 md:h-20 drop-shadow-lg"
+                  />
+                </div>
+              </div>
             </div>
 
             <!-- Hero Content -->
@@ -77,12 +94,13 @@ const ctaLink = christmasProduct?.cta_link || "#";
               <h1
                 class="text-4xl md:text-6xl font-bold text-christmas-red mb-6"
               >
-                Christmas Bingo! 🎄
+                Christmas Bingo!
               </h1>
               <p class="text-xl md:text-2xl text-gray-700 mb-8">
                 A festive and magical version of the classic Mexican game.
                 Digital PDF ready to print at home - instant download!
               </p>
+
               <div class="text-center md:text-left mb-4">
                 <span class="text-4xl md:text-5xl font-bold text-christmas-red">
                   {formattedPrice}
