@@ -27,6 +27,7 @@ import memoriaImg from "../assets/images/christmas/misc/memoria.png";
 
 // Marketing images
 import marketingImg01 from "../assets/images/christmas/marketing/01.png";
+import marketingImg02 from "../assets/images/christmas/marketing/02.png";
 
 // Character data
 import charactersData from "../data/characters.json";
@@ -241,47 +242,67 @@ const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
         >
           Cómo jugar
         </h2>
-        <div class="max-w-3xl mx-auto space-y-8">
-          <div class="flex items-start gap-4">
-            <div
-              class="shrink-0 w-12 h-12 bg-christmas-red text-white rounded-full flex items-center justify-center text-xl font-bold"
-            >
-              1
+        <div class="max-w-5xl mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <!-- Steps Content -->
+            <div class="space-y-8">
+              <div class="flex items-start gap-4">
+                <div
+                  class="shrink-0 w-12 h-12 bg-christmas-red text-white rounded-full flex items-center justify-center text-xl font-bold"
+                >
+                  1
+                </div>
+                <p class="text-lg pt-2">
+                  Reparte las tablas entre los jugadores.
+                </p>
+              </div>
+              <div class="flex items-start gap-4">
+                <div
+                  class="shrink-0 w-12 h-12 bg-christmas-red text-white rounded-full flex items-center justify-center text-xl font-bold"
+                >
+                  2
+                </div>
+                <p class="text-lg pt-2">
+                  Un jugador canta las cartas al estilo tradicional: "¡Eeeeel
+                  Santa Claus!"
+                </p>
+              </div>
+              <div class="flex items-start gap-4">
+                <div
+                  class="shrink-0 w-12 h-12 bg-christmas-red text-white rounded-full flex items-center justify-center text-xl font-bold"
+                >
+                  3
+                </div>
+                <p class="text-lg pt-2">
+                  Pon un frijolito o piedrita en tu cartilla si tienes el
+                  personaje que anuncian
+                </p>
+              </div>
+              <div class="flex items-start gap-4">
+                <div
+                  class="shrink-0 w-12 h-12 bg-christmas-red text-white rounded-full flex items-center justify-center text-xl font-bold"
+                >
+                  4
+                </div>
+                <p class="text-lg pt-2">
+                  ¡Gana quien complete una línea en horizontal o vertical, o
+                  quien llene su cartilla!
+                </p>
+              </div>
             </div>
-            <p class="text-lg pt-2">Reparte las tablas entre los jugadores.</p>
-          </div>
-          <div class="flex items-start gap-4">
-            <div
-              class="shrink-0 w-12 h-12 bg-christmas-red text-white rounded-full flex items-center justify-center text-xl font-bold"
-            >
-              2
+
+            <!-- Marketing Image -->
+            <div class="flex justify-center">
+              <div
+                class="relative w-full max-w-md h-64 md:h-120 overflow-hidden rounded-2xl shadow-2xl"
+              >
+                <img
+                  src={marketingImg02.src}
+                  alt="Cómo jugar Lotería de Navidad"
+                  class="w-full h-full object-cover"
+                />
+              </div>
             </div>
-            <p class="text-lg pt-2">
-              Un jugador canta las cartas al estilo tradicional: "¡Eeeeel Santa
-              Claus!"
-            </p>
-          </div>
-          <div class="flex items-start gap-4">
-            <div
-              class="shrink-0 w-12 h-12 bg-christmas-red text-white rounded-full flex items-center justify-center text-xl font-bold"
-            >
-              3
-            </div>
-            <p class="text-lg pt-2">
-              Pon un frijolito o piedrita en tu cartilla si tienes el personaje
-              que anuncian
-            </p>
-          </div>
-          <div class="flex items-start gap-4">
-            <div
-              class="shrink-0 w-12 h-12 bg-christmas-red text-white rounded-full flex items-center justify-center text-xl font-bold"
-            >
-              4
-            </div>
-            <p class="text-lg pt-2">
-              ¡Gana quien complete una línea en horizontal o vertical, o quien
-              llene su cartilla!
-            </p>
           </div>
         </div>
       </div>
